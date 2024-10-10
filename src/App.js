@@ -1,10 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-// import Lessons from './pages/Lessons';
-// import LessonDetail from './pages/LessonDetail';
-// import Quizzes from './pages/Quizzes';
-// import QuizDetail from './pages/QuizDetail';
-// import Progress from './pages/Progress';
+import { Home, Lessons, LessonDetail, Quizzes, QuizDetail, Progress } from './pages';
 // import Navbar from './components/Navbar';
 
 function App() {

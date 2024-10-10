@@ -1,0 +1,57 @@
+[
+  {
+    "id": 101,
+    "name": "Binary Search",
+    "description": "An efficient algorithm for finding an item from a sorted list.",
+    "difficulty": "medium",
+    "concepts": ["Logarithmic Complexity", "Divide and Conquer"],
+    "quizzes": [
+      {
+        "multipleChoice": [
+          {
+            "question": "What is the time complexity of binary search?",
+            "options": ["O(n)", "O(log n)", "O(n^2)"],
+            "answer": "O(log n)"
+          },
+          {
+            "question": "What kind of list is required for binary search?",
+            "options": ["Unsorted", "Sorted", "Any"],
+            "answer": "Sorted"
+          }
+        ]
+      },
+      {
+        "cloze": [
+          {
+            "question": "example question with blank {      } here.",
+            "options": ["option1, option2, option3"],
+            "answer": "option2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "name": "Merge Sort",
+    "description": "A divide and conquer algorithm that was invented by John von Neumann.",
+    "difficulty": "hard",
+    "concepts": ["Divide and Conquer", "Stable Sort"],
+    "quizzes": [
+      {
+        "multipleChoice": [
+          {
+            "question": "What is the average time complexity of merge sort?",
+            "options": ["O(n log n)", "O(n^2)", "O(log n)"],
+            "answer": "O(n log n)"
+          },
+          {
+            "question": "Is merge sort a stable algorithm?",
+            "options": ["Yes", "No"],
+            "answer": "Yes"
+          }
+        ]
+      }
+    ]
+  }
+]
