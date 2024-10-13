@@ -1,25 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./MainContainer.css";
+import { Quiz, QuizSelector } from "./index";
 
 function Home() {
   return (
-    <div className="home-container">
-      <h1 className="home-title">Welcome to AlgoLearn</h1>
-      <p className="home-subtitle">Master algorithms in bite-sized lessons.</p>
-
-      <div className="home-links">
-        <Link to="/lessons" className="home-link">
-          Start Learning
-        </Link>
-        <Link to="/quizzes" className="home-link">
-          Take a Quiz
-        </Link>
-        <Link to="/progress" className="home-link">
-          View Progress
-        </Link>
-      </div>
-    </div>
+    <>
+      <h1> This is the main container </h1>
+      <QuizSelector />
+    </>
   );
 }
 
