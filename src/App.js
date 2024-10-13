@@ -1,20 +1,12 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Home, Lessons, LessonDetail, Quizzes, QuizDetail, Progress } from './pages';
-// import Navbar from './components/Navbar';
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Home, Navbar } from "./components";
 
 function App() {
   return (
-    <Router>
-      {/* <Navbar /> */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* <Route path="/lessons" element={<Lessons />} />
-        <Route path="/lessons/:id" element={<LessonDetail />} />
-        <Route path="/quizzes" element={<Quizzes />} />
-        <Route path="/quizzes/:id" element={<QuizDetail />} />
-        <Route path="/progress" element={<Progress />} /> */}
-      </Routes>
-    </Router>
+    <>
+      <Navbar />
+      <Home />
+    </>
   );
 }
 
