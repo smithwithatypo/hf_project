@@ -1,15 +1,13 @@
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { MainContainer, Navbar } from "./components/index";
-import "./App.css";
+import React from "react";
+import HomeScreen from "./components/HomeScreen";
 
-function App() {
+const App = () => {
   return (
-    <>
-      <h1>This is the app</h1>
-      <Navbar />
-      <MainContainer />
-    </>
+    <div>
+      <h1>Flashcard Quiz</h1>
+      <HomeScreen />
+    </div>
   );
-}
+};
 
 export default App;

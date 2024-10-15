@@ -1,0 +1,19 @@
+[
+  {
+    "title": "Algorithm Basics",
+    "question": "What is the time complexity of binary search?",
+    "choices": ["O(n)", "O(log n)", "O(n^2)", "O(1)"],
+    "answer": "O(log n)"
+  },
+  {
+    "title": "Sorting Algorithms",
+    "question": "Which sorting algorithm has the best average-case complexity?",
+    "choices": [
+      "Bubble Sort",
+      "Insertion Sort",
+      "Merge Sort",
+      "Selection Sort"
+    ],
+    "answer": "Merge Sort"
+  }
+]
