@@ -1,0 +1,33 @@
+nav {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-between;
+    background-color: lightblue;
+    padding: 10px 0px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    width: 100%;
+}
+
+nav li {
+    margin: 0 15px; /* Spacing between links */
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+nav a {
+    text-decoration: none;
+    color: black; /* Adjust text color */
+    padding: 10px;
+}
+
+nav a:hover {
+    color: blue; /* Optional: Hover effect */
+}

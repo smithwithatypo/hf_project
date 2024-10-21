@@ -1,20 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
-function Navigation() {
+function Navbar() {
   return (
     <nav>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/home">Home</Link>
         </li>
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
-        <li>
-          <Link to="/flashcards">Flashcards</Link>
-        </li>
-        <li>
+        <li className="profile">
           <Link to="/profile">Profile</Link>
         </li>
       </ul>
@@ -22,4 +17,4 @@ function Navigation() {
   );
 }
 
-export default Navigation;
+export default Navbar;
