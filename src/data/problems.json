@@ -1,0 +1,112 @@
+{
+    "topics": {
+      "arrays_and_hashing": {
+        "name": "Arrays and Hashing",
+        "problems": {
+          "two_sum": {
+            "id": "two_sum",
+            "title": "Two Sum",
+            "description": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nYou can return the answer in any order.",
+            "examples": [
+              {
+                "input": "nums = [2,7,11,15], target = 9",
+                "output": "[0,1]",
+                "explanation": "Because nums[0] + nums[1] == 9, we return [0, 1]."
+              },
+              {
+                "input": "nums = [3,2,4], target = 6",
+                "output": "[1,2]"
+              },
+              {
+                "input": "nums = [3,3], target = 6",
+                "output": "[0,1]"
+              }
+            ],
+            "constraints": [
+              "2 <= nums.length <= 10^4",
+              "-10^9 <= nums[i] <= 10^9",
+              "-10^9 <= target <= 10^9",
+              "Only one valid answer exists."
+            ],
+            "follow_up": "Can you come up with an algorithm that is less than O(n^2) time complexity?",
+            "code_template": {
+              "python": "class Solution:\n    def twoSum(self, nums: List[int], target: int) -> List[int]:\n        pass"
+            },
+            "questions": [
+              {
+                "order": 1,
+                "type": "multiple_choice",
+                "question": "What is the main goal of the Two Sum problem?",
+                "options": [
+                  "Find two numbers in the array that add up to the target value.",
+                  "Sort the array in ascending order.",
+                  "Find all pairs of numbers that multiply to the target value.",
+                  "Calculate the sum of all elements in the array."
+                ],
+                "answer": "Find two numbers in the array that add up to the target value."
+              },
+              {
+                "order": 2,
+                "type": "fill_in_the_blank",
+                "question": "In the Two Sum problem, you need to return the ______ of the two numbers that add up to the target.",
+                "answer": "indices"
+              },
+              {
+                "order": 3,
+                "type": "true_false",
+                "question": "You may use the same element twice to achieve the target sum.",
+                "answer": false
+              },
+              {
+                "order": 4,
+                "type": "multiple_choice",
+                "question": "What is the time complexity of a brute-force solution for the Two Sum problem?",
+                "options": [
+                  "O(n)",
+                  "O(log n)",
+                  "O(n^2)",
+                  "O(1)"
+                ],
+                "answer": "O(n^2)"
+              },
+              {
+                "order": 5,
+                "type": "multiple_choice",
+                "question": "Which data structure can optimize the Two Sum solution to O(n) time complexity?",
+                "options": [
+                  "Stack",
+                  "Queue",
+                  "Hash Map (Dictionary)",
+                  "Linked List"
+                ],
+                "answer": "Hash Map (Dictionary)"
+              },
+              {
+                "order": 6,
+                "type": "matching",
+                "question": "Match each approach with its corresponding time complexity.",
+                "pairs": [
+                  {
+                    "left": "Brute-force approach",
+                    "options": ["O(n^2)", "O(n)", "O(log n)"],
+                    "answer": "O(n^2)"
+                  },
+                  {
+                    "left": "Using a hash map",
+                    "options": ["O(n)", "O(n^2)", "O(1)"],
+                    "answer": "O(n)"
+                  }
+                ]
+              },
+              {
+                "order": 7,
+                "type": "fill_in_the_blank",
+                "question": "To check if a complement exists while iterating, we can use a ______ to achieve constant time look-up.",
+                "answer": "hash map"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
