@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Navbar } from "../index";
 
 const topics = [
-  { id: 1, name: "Mathematics" },
+  { id: 1, name: "Mathematics" }, 
   { id: 2, name: "Science" },
   { id: 3, name: "History" },
   // Add more topics here

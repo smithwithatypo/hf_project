@@ -1,0 +1,92 @@
+
+  .flashcard-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: #FFFFFF;
+  margin: 60px auto 0 auto;
+}
+
+.static-section {
+  display: flex;
+  justify-content: space-around;
+  width: 84%;
+  margin-bottom: 20px;
+}
+
+.problem-description, .code-base {
+  background-color: #4B4B4D; /* Thunder */
+  padding: 20px;
+  border-radius: 10px;
+  width: 45%;
+}
+
+.code-base pre {
+  background-color: #2e2e2e;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.question-section {
+  background-color: #A8C686; /* Grassy */
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  text-align: center;
+}
+
+.question-format {
+  margin-top: 10px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.option input {
+  margin-right: 8px;
+}
+
+.matching {
+  display: flex;
+  flex-direction: column;
+}
+
+.term {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.term select {
+  margin-left: 10px;
+}
+
+.question-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+
+
+/* Responsive stacking on smaller screens */
+@media (max-width: 768px) {
+  .flashcard-page {
+    align-items: flex-start; /* Align content to the left */
+    margin-left: 60px; /* Move containers to the left */
+  }
+
+  .static-section {
+    flex-direction: column; /* Stack items vertically */
+  }
+  
+  .problem-description, .code-base {
+    width: 94%; /* Full width within the column layout */
+    margin-bottom: 10px; /* Add spacing between stacked items */
+  }
+}
