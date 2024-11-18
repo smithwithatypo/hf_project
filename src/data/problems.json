@@ -105,6 +105,76 @@
                 "answer": "hash map"
               }
             ]
+          }, 
+          "valid_anagram": {
+            "id": "valid_anagram",
+            "title": "Valid Anagram",
+            "description": ""
+          },
+          "top_k_frequent": {
+            "id": "top_k_frequent",
+            "title": "Top K Frequent",
+            "description": ""
+          }
+        }
+      },
+      "stack": {
+        "name": "Stack",
+        "problems": {
+          "valid_parentheses": {
+            "id": "valid_parentheses",
+            "title": "Valid Parentheses",
+            "description": ""
+          },
+          "min_stack": {
+            "id": "min_stack",
+            "title": "Min Stack",
+            "description": ""
+          },
+          "car_fleet": {
+            "id": "car_fleet",
+            "title": "Car Fleet",
+            "description": ""
+          }
+        }
+      },
+      "two_pointers": {
+        "name": "Two Pointers",
+        "problems": {
+          "valid_palindrome": {
+            "id": "valid_palindrome",
+            "title": "Valid Palindrome",
+            "description": ""
+          },
+          "two_sum_ii": {
+            "id": "two_sum_ii",
+            "title": "Two Sum II",
+            "description": ""
+          },
+          "container_with_most_water": {
+            "id": "container_with_most_water",
+            "title": "Container With Most Water",
+            "description": ""
+          }
+        }
+      },
+      "linked_list": {
+        "name": "Linked List",
+        "problems": {
+          "reverse_linked_list": {
+            "id": "reverse_linked_list",
+            "title": "Reverse Linked List",
+            "description": ""
+          },
+          "merge_two_sorted_lists": {
+            "id": "merge_two_sorted_lists",
+            "title": "Merge Two Sorted Lists",
+            "description": ""
+          },
+          "copy_list_with_random_pointer": {
+            "id": "copy_list_with_random_pointer",
+            "title": "Copy List With Random Pointer",
+            "description": ""
           }
         }
       }
