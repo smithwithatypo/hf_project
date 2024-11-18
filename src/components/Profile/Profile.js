@@ -2,10 +2,16 @@ import React from "react";
 import "./Profile.css";
 import { Navbar } from "../index";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../UserContext";
 
 function Profile() {
   const navigate = useNavigate();
+  const { setUser } = React.useContext(UserContext);
+
   const handleLogout = () => {
+    localStorage.removeItem('token');
+    // Clear user data
+    setUser(null);
     // Add logout logic here if needed
     navigate("/");
   };
