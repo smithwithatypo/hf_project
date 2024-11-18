@@ -4,11 +4,14 @@ const express = require('express');
 const router = express.Router();
 const auth = require('../middleware/auth');
 const UserProgress = require('../models/UserProgress');
+const UserResponse = require('../models/UserResponse');
 const Problem = require('../models/Problem');
 
 router.get('/progress', auth, async (req, res) => {
+    console.log('GET /progress ...'); // TODO: Remove this added line
+    console.log('req.user:', req.user); // TODO: Remove this added line
   try {
-    const progress = await UserProgress.find({ user: req.user.id })
+    const progress = await UserProgress.find({ user: req.user.userId })
       .populate('problem', 'problemId title')
       .populate('topic', 'name');
 
@@ -31,7 +34,7 @@ router.get('/progress', auth, async (req, res) => {
 
 router.get('/history', auth, async (req, res) => {
     try {
-      const responses = await UserResponse.find({ user: req.user.id })
+      const responses = await UserResponse.find({ user: req.user.userId })
         .populate('question', 'questionText')
         .populate('problem', 'title')
         .sort({ attemptedAt: -1 });

@@ -6,8 +6,9 @@ const auth = require('../middleware/auth');
 
 // Get User Data
 router.get('/', auth, async (req, res) => {
+    console.log('req.user:', req.user); // TODO: Remove this added line
   try {
-    const user = await User.findById(req.user).select('-password');
+    const user = await User.findById(req.user.userId).select('-password');
     if (!user) {
         console.log('User not found');
         return res.status(404).json({ message: 'User not found' });

@@ -6,10 +6,11 @@ import { UserContext } from "../../UserContext";
 
 function Profile() {
   const navigate = useNavigate();
-  const { setUser } = React.useContext(UserContext);
+  const { user, setUser, updateUser } = React.useContext(UserContext);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('loggedInUser');
     // Clear user data
     setUser(null);
     // Add logout logic here if needed

@@ -119,6 +119,16 @@ console.log('req.user:', req.user); // TODO: Remove this added line
     const newLevel = Math.floor(user.points / levelThreshold) + 1;
     user.level = newLevel;
 
+    // Update next_level_points
+    user.next_level_points = (newLevel * levelThreshold) - user.points;
+
+    // Update badges (example logic, adjust as needed)
+    const badges = [];
+    if (userProgress.masteryLevel === 1 && !user.badges.includes('problem_mastery')) {
+      badges.push('problem_mastery');
+    }
+    user.badges = [...new Set([...user.badges, ...badges])];
+
     await user.save();
 
     res.json({ feedback, totalCorrect, totalQuestions: responses.length });
