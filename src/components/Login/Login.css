@@ -68,7 +68,7 @@
   }
   
   .input-group input:focus {
-    border-color: #4B4B4D; /* Thunder color */
+    border-color: #4B4B4D; 
     outline: none;
   }
   
@@ -85,7 +85,7 @@
     padding: 10px 15px;
     font-size: 16px;
     color: white;
-    background-color: #4B4B4D; /* Thunder color */
+    background-color: #4B4B4D; 
     border: none;
     border-radius: 5px;
     cursor: pointer;

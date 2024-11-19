@@ -109,12 +109,77 @@
           "valid_anagram": {
             "id": "valid_anagram",
             "title": "Valid Anagram",
-            "description": ""
+            "description": "Given two strings s and t, return true if t is an anagram of s, and false otherwise.\n\nAn Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+            "examples": [
+              {
+                "input": "s = 'anagram', t = 'nagaram'",
+                "output": "true"
+              },
+              {
+                "input": "s = 'rat', t = 'car'",
+                "output": "false"
+              }
+            ],
+            "constraints": [
+              "1 <= s.length, t.length <= 5 * 10^4",
+              "s and t consist of lowercase English letters."
+            ],
+            "follow_up": "What if the inputs contain Unicode characters? How would you adapt your solution to such a case?",
+            "code_template": {
+              "python": "class Solution:\n    def isAnagram(self, s: str, t: str) -> bool:\n        pass"
+            },
+            "questions": [
+              {
+                "order": 1,
+                "type": "multiple_choice",
+                "question": "What is an anagram?",
+                "options": [
+                  "A rearrangement of a word using all original letters.",
+                  "A word that rhymes with another word.",
+                  "A word with the same meaning as another word.",
+                  "A word formed by removing vowels."
+                ],
+                "answer": "A rearrangement of a word using all original letters."
+              }
+            ]
           },
           "top_k_frequent": {
             "id": "top_k_frequent",
-            "title": "Top K Frequent",
-            "description": ""
+            "title": "Top K Frequent Elements",
+            "description": "Given an integer array nums and an integer k, return the k most frequent elements.\n\nYou may return the answer in any order.",
+            "examples": [
+              {
+                "input": "nums = [1,1,1,2,2,3], k = 2",
+                "output": "[1,2]"
+              },
+              {
+                "input": "nums = [1], k = 1",
+                "output": "[1]"
+              }
+            ],
+            "constraints": [
+              "1 <= nums.length <= 10^5",
+              "-10^4 <= nums[i] <= 10^4",
+              "k is in the range [1, the number of unique elements in the array]."
+            ],
+            "follow_up": "Can you solve the problem in O(n) time complexity?",
+            "code_template": {
+              "python": "class Solution:\n    def topKFrequent(self, nums: List[int], k: int) -> List[int]:\n        pass"
+            },
+            "questions": [
+              {
+                "order": 1,
+                "type": "multiple_choice",
+                "question": "What does 'Top K Frequent' mean?",
+                "options": [
+                  "The k largest elements in the array.",
+                  "The k most frequently occurring elements in the array.",
+                  "The k smallest elements in the array.",
+                  "The k least frequently occurring elements in the array."
+                ],
+                "answer": "The k most frequently occurring elements in the array."
+              }
+            ]
           }
         }
       },

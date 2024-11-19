@@ -74,6 +74,7 @@
 
 
 
+
 /* Responsive stacking on smaller screens */
 @media (max-width: 768px) {
   .flashcard-page {
@@ -90,3 +91,9 @@
     margin-bottom: 10px; /* Add spacing between stacked items */
   }
 }
+
+
+
+
+
+

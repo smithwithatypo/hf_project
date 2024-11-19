@@ -42,7 +42,7 @@
   .problems-table {
     margin: 0 auto;
     border-collapse: collapse;
-    width: 80%;
+    width: 50%;
     table-layout: fixed;
   }
   
@@ -64,6 +64,53 @@
 }
 
 .problems-table tr:hover {
-    background-color: #aad2ec;
+    background-color: #A8C686;
     cursor: pointer;
+}
+
+
+
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it’s above other content */
+}
+
+.modal {
+  background: #fff; /* Modal background color */
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.motivational-quote {
+  font-size: 16px;
+  font-style: italic;
+  color: #4B4B4D; /* Thunder color */
+  margin-bottom: 20px;
+}
+
+.close-button {
+  background-color: #4B4B4D; /* Thunder color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: #333; /* Darker shade */
 }
