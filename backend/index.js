@@ -16,6 +16,7 @@ const problemRoutes = require('./routes/problem');
 const answerRoutes = require('./routes/answers');        // New route
 const userProgressRoutes = require('./routes/userProgress'); // New route
 const topicRoutes = require('./routes/topics');          // New route (if applicable)
+const badgeRoutes = require('./routes/badges'); // New route
 
 // Use Routes
 app.use('/api/auth', authRoutes);
@@ -24,6 +25,8 @@ app.use('/api/problems', problemRoutes);
 app.use('/api/answers', answerRoutes);                   // New route
 app.use('/api/userProgress', userProgressRoutes);        // New route
 app.use('/api/topics', topicRoutes);                     // New route (if applicable)
+app.use('/api/badges', badgeRoutes); // New route
+
 
 // Connect to MongoDB
 mongoose
