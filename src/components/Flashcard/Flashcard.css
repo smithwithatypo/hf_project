@@ -1,0 +1,188 @@
+
+  .flashcard-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: #FFFFFF;
+  margin: 60px auto 0 auto;
+}
+
+.static-section {
+  display: flex;
+  justify-content: space-around;
+  width: 84%;
+  margin-bottom: 20px;
+}
+
+.problem-description, .code-base {
+  background-color: #4B4B4D; /* Thunder */
+  padding: 20px;
+  border-radius: 10px;
+  width: 45%;
+}
+
+.code-base pre {
+  background-color: #2e2e2e;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.question-section {
+  /* background-color: #A8C686; Grassy  */
+  background-color: #aad2ec;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  text-align: center;
+}
+
+.question-format {
+  margin-top: 10px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.option input {
+  margin-right: 8px;
+}
+
+.matching {
+  display: flex;
+  flex-direction: column;
+}
+
+.term {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.term select {
+  margin-left: 10px;
+}
+
+.question-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.nav-button {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+.nav-button:hover {
+  background-color: #e0e0e0;
+}
+
+.submit-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.startover-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.startover-button:hover {
+  background-color: #c82333;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
+
+.correct-answer {
+  color: green;
+  font-weight: bold;
+}
+
+.correct-message {
+  color: green;
+  font-weight: bold;
+}
+
+.incorrect-message {
+  color: red;
+  font-weight: bold;
+}
+
+.option.correct {
+  background-color: #d4edda;
+}
+
+.option.incorrect {
+  background-color: #f8d7da;
+}
+
+.user-responses, .graded-response {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+
+/* Responsive stacking on smaller screens */
+@media (max-width: 768px) {
+  .flashcard-page {
+    align-items: flex-start; /* Align content to the left */
+    margin-left: 60px; /* Move containers to the left */
+  }
+
+  .static-section {
+    flex-direction: column; /* Stack items vertically */
+  }
+  
+  .problem-description, .code-base {
+    width: 94%; /* Full width within the column layout */
+    margin-bottom: 10px; /* Add spacing between stacked items */
+  }
+}
+
+
+
+
+
+

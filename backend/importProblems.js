@@ -31,7 +31,6 @@ const importProblems = async () => {
         const questionIds = [];
 
         for (const questionData of problemData.questions) {
-          // Find the question by questionKey
           const question = await Question.findOne({
             questionId: questionData.questionId,
           });
@@ -48,6 +47,9 @@ const importProblems = async () => {
           problemId: problemData.problemId,
           title: problemData.title,
           description: problemData.description,
+          examples: problemData.examples,
+          constraints: problemData.constraints,
+          starterCode: problemData.starterCode,
           topic: dbTopic._id, // Reference the Topic ObjectId
           questions: questionIds,
         });

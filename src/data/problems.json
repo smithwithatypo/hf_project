@@ -1,0 +1,247 @@
+{
+    "topics": {
+      "arrays_and_hashing": {
+        "name": "Arrays and Hashing",
+        "problems": {
+          "two_sum": {
+            "id": "two_sum",
+            "title": "Two Sum",
+            "description": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nYou can return the answer in any order.",
+            "examples": [
+              {
+                "input": "nums = [2,7,11,15], target = 9",
+                "output": "[0,1]",
+                "explanation": "Because nums[0] + nums[1] == 9, we return [0, 1]."
+              },
+              {
+                "input": "nums = [3,2,4], target = 6",
+                "output": "[1,2]"
+              },
+              {
+                "input": "nums = [3,3], target = 6",
+                "output": "[0,1]"
+              }
+            ],
+            "constraints": [
+              "2 <= nums.length <= 10^4",
+              "-10^9 <= nums[i] <= 10^9",
+              "-10^9 <= target <= 10^9",
+              "Only one valid answer exists."
+            ],
+            "follow_up": "Can you come up with an algorithm that is less than O(n^2) time complexity?",
+            "code_template": {
+              "python": "class Solution:\n    def twoSum(self, nums: List[int], target: int) -> List[int]:\n        pass"
+            },
+            "questions": [
+              {
+                "order": 1,
+                "type": "multiple_choice",
+                "question": "What is the main goal of the Two Sum problem?",
+                "options": [
+                  "Find two numbers in the array that add up to the target value.",
+                  "Sort the array in ascending order.",
+                  "Find all pairs of numbers that multiply to the target value.",
+                  "Calculate the sum of all elements in the array."
+                ],
+                "answer": "Find two numbers in the array that add up to the target value."
+              },
+              {
+                "order": 2,
+                "type": "fill_in_the_blank",
+                "question": "In the Two Sum problem, you need to return the ______ of the two numbers that add up to the target.",
+                "answer": "indices"
+              },
+              {
+                "order": 3,
+                "type": "true_false",
+                "question": "You may use the same element twice to achieve the target sum.",
+                "answer": false
+              },
+              {
+                "order": 4,
+                "type": "multiple_choice",
+                "question": "What is the time complexity of a brute-force solution for the Two Sum problem?",
+                "options": [
+                  "O(n)",
+                  "O(log n)",
+                  "O(n^2)",
+                  "O(1)"
+                ],
+                "answer": "O(n^2)"
+              },
+              {
+                "order": 5,
+                "type": "multiple_choice",
+                "question": "Which data structure can optimize the Two Sum solution to O(n) time complexity?",
+                "options": [
+                  "Stack",
+                  "Queue",
+                  "Hash Map (Dictionary)",
+                  "Linked List"
+                ],
+                "answer": "Hash Map (Dictionary)"
+              },
+              {
+                "order": 6,
+                "type": "matching",
+                "question": "Match each approach with its corresponding time complexity.",
+                "pairs": [
+                  {
+                    "left": "Brute-force approach",
+                    "options": ["O(n^2)", "O(n)", "O(log n)"],
+                    "answer": "O(n^2)"
+                  },
+                  {
+                    "left": "Using a hash map",
+                    "options": ["O(n)", "O(n^2)", "O(1)"],
+                    "answer": "O(n)"
+                  }
+                ]
+              },
+              {
+                "order": 7,
+                "type": "fill_in_the_blank",
+                "question": "To check if a complement exists while iterating, we can use a ______ to achieve constant time look-up.",
+                "answer": "hash map"
+              }
+            ]
+          }, 
+          "valid_anagram": {
+            "id": "valid_anagram",
+            "title": "Valid Anagram",
+            "description": "Given two strings s and t, return true if t is an anagram of s, and false otherwise.\n\nAn Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+            "examples": [
+              {
+                "input": "s = 'anagram', t = 'nagaram'",
+                "output": "true"
+              },
+              {
+                "input": "s = 'rat', t = 'car'",
+                "output": "false"
+              }
+            ],
+            "constraints": [
+              "1 <= s.length, t.length <= 5 * 10^4",
+              "s and t consist of lowercase English letters."
+            ],
+            "follow_up": "What if the inputs contain Unicode characters? How would you adapt your solution to such a case?",
+            "code_template": {
+              "python": "class Solution:\n    def isAnagram(self, s: str, t: str) -> bool:\n        pass"
+            },
+            "questions": [
+              {
+                "order": 1,
+                "type": "multiple_choice",
+                "question": "What is an anagram?",
+                "options": [
+                  "A rearrangement of a word using all original letters.",
+                  "A word that rhymes with another word.",
+                  "A word with the same meaning as another word.",
+                  "A word formed by removing vowels."
+                ],
+                "answer": "A rearrangement of a word using all original letters."
+              }
+            ]
+          },
+          "top_k_frequent": {
+            "id": "top_k_frequent",
+            "title": "Top K Frequent Elements",
+            "description": "Given an integer array nums and an integer k, return the k most frequent elements.\n\nYou may return the answer in any order.",
+            "examples": [
+              {
+                "input": "nums = [1,1,1,2,2,3], k = 2",
+                "output": "[1,2]"
+              },
+              {
+                "input": "nums = [1], k = 1",
+                "output": "[1]"
+              }
+            ],
+            "constraints": [
+              "1 <= nums.length <= 10^5",
+              "-10^4 <= nums[i] <= 10^4",
+              "k is in the range [1, the number of unique elements in the array]."
+            ],
+            "follow_up": "Can you solve the problem in O(n) time complexity?",
+            "code_template": {
+              "python": "class Solution:\n    def topKFrequent(self, nums: List[int], k: int) -> List[int]:\n        pass"
+            },
+            "questions": [
+              {
+                "order": 1,
+                "type": "multiple_choice",
+                "question": "What does 'Top K Frequent' mean?",
+                "options": [
+                  "The k largest elements in the array.",
+                  "The k most frequently occurring elements in the array.",
+                  "The k smallest elements in the array.",
+                  "The k least frequently occurring elements in the array."
+                ],
+                "answer": "The k most frequently occurring elements in the array."
+              }
+            ]
+          }
+        }
+      },
+      "stack": {
+        "name": "Stack",
+        "problems": {
+          "valid_parentheses": {
+            "id": "valid_parentheses",
+            "title": "Valid Parentheses",
+            "description": ""
+          },
+          "min_stack": {
+            "id": "min_stack",
+            "title": "Min Stack",
+            "description": ""
+          },
+          "car_fleet": {
+            "id": "car_fleet",
+            "title": "Car Fleet",
+            "description": ""
+          }
+        }
+      },
+      "two_pointers": {
+        "name": "Two Pointers",
+        "problems": {
+          "valid_palindrome": {
+            "id": "valid_palindrome",
+            "title": "Valid Palindrome",
+            "description": ""
+          },
+          "two_sum_ii": {
+            "id": "two_sum_ii",
+            "title": "Two Sum II",
+            "description": ""
+          },
+          "container_with_most_water": {
+            "id": "container_with_most_water",
+            "title": "Container With Most Water",
+            "description": ""
+          }
+        }
+      },
+      "linked_list": {
+        "name": "Linked List",
+        "problems": {
+          "reverse_linked_list": {
+            "id": "reverse_linked_list",
+            "title": "Reverse Linked List",
+            "description": ""
+          },
+          "merge_two_sorted_lists": {
+            "id": "merge_two_sorted_lists",
+            "title": "Merge Two Sorted Lists",
+            "description": ""
+          },
+          "copy_list_with_random_pointer": {
+            "id": "copy_list_with_random_pointer",
+            "title": "Copy List With Random Pointer",
+            "description": ""
+          }
+        }
+      }
+    }
+  }
