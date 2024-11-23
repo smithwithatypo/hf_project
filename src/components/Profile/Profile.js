@@ -6,13 +6,13 @@ import { UserContext } from "../../UserContext";
 
 function Profile() {
   const navigate = useNavigate();
-  const { user, setUser, updateUser } = React.useContext(UserContext);
+  const { user, setUser, handleLogout } = React.useContext(UserContext);
 
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('loggedInUser');
-    // Clear user data
-    setUser(null);
+  if (!user) return <div>Loading...</div>;
+
+  const logout = () => {
+    handleLogout();
+    setUser(null);  // Clear user data
     // Add logout logic here if needed
     navigate("/");
   };
@@ -41,12 +41,24 @@ function Profile() {
         <h1>Profile</h1>
         <div className="user-info">
           <p>
-            <strong>Name:</strong> {userInfo.name}
+            <strong>Name:</strong> {user.name}
           </p>
           <p>
-            <strong>Email:</strong> {userInfo.email}
+            <strong>Email:</strong> {user.email}
           </p>
-          <button className="logout-button" onClick={handleLogout}>
+          <p>
+            <strong>Points:</strong> {user.points}
+          </p>
+          <p>
+            <strong>Level:</strong> {user.level}
+          </p>
+          <p>
+            <strong>Next Level Points:</strong> {user.next_level_points}
+          </p>
+          <p>
+            <strong>Login Streak:</strong> {user.login_streak} day{user.login_streak > 1 ? `s` : ``}
+          </p>
+          <button className="logout-button" onClick={logout}>
             Logout
           </button>
         </div>
@@ -58,6 +70,12 @@ function Profile() {
               <p>{badge}</p>
             </div>
           ))}
+        </div>
+
+        {/* Debugging info remove before deployment */}
+        <div className="user-debug">
+          <h3>User Context (Debug)</h3>
+          <pre>{JSON.stringify(user, null, 2)}</pre>
         </div>
       </div>
     </>

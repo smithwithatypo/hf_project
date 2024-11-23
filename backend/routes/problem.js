@@ -199,6 +199,21 @@ router.post('/:problemId/submit', auth, async (req, res) => {
     user.badges = [...new Set([...user.badges, ...badges])];
 
     await user.save();
+    
+    const io = req.app.get('io');
+    const connectedUsers = req.app.get('connectedUsers');
+    const socketId = connectedUsers[req.user.userId];
+
+    if (socketId) {
+      io.to(socketId).emit('userUpdated', user);
+    
+      // Disconnect the socket
+      const socketToDisconnect = io.sockets.sockets.get(socketId);
+      if (socketToDisconnect) {
+console.log(`Disconnecting socket ${socketId} after sending update...`); // TODO: Remove this added line
+        socketToDisconnect.disconnect(true);
+      }
+    }
 
     return res.json({ feedback, totalCorrect, totalPointsEarned });
   } catch (error) {

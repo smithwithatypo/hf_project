@@ -19,7 +19,7 @@ function Home() {
       try {
         const res = await api.get('/topics');
         setTopics(res.data);
-        console.log('Topics:', res.data);
+// console.log('Topics:', res.data);
       } catch (error) {
         console.error('Error fetching topics:', error);
       }
@@ -37,7 +37,7 @@ function Home() {
         topic.topicId === topicId ? { ...topic, problems: res.data } : topic
       );
       setTopics(updatedTopics);
-console.log('updatedTopics:', updatedTopics);
+// console.log('updatedTopics:', updatedTopics);
     } catch (error) {
       console.error('Error fetching problems:', error);
     }

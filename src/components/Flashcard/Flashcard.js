@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useCallback, memo } from "react";
+import React, { useState, useEffect, useRef, useContext, useCallback, memo } from "react";
 import { useParams } from "react-router-dom";
 import { Navbar } from "../index.js";
 import problemsData from "../../data/problems.json"; // Adjust the path as necessary
 import api from "../../api";
 import "./Flashcard.css";
+import { UserContext } from "../../UserContext";
 
 
 // Child components wrapped with React.memo
@@ -46,7 +47,7 @@ const ShortAnswerQuestion = memo(({ question, answers, handleAnswerChange, grade
 const MultipleChoiceQuestion = memo(({ question, answers, handleAnswerChange, gradedResponse }) => {
 
   const feedback = gradedResponse?.find(f => f.questionId === question._id.toString());
-  console.log('Feedback:', feedback);
+  // console.log('Feedback:', feedback);
   return (
     <div className="question-format">
       <p>{question.text}</p>
@@ -122,7 +123,7 @@ const MultipleSelectQuestion = memo(({ question, answers, handleAnswerChange, gr
   };
 
   const feedback = gradedResponse?.find(f => f.questionId === question._id.toString());
-  console.log(`Multiple select feedback:`, feedback);
+  // console.log(`Multiple select feedback:`, feedback);
   return (
     <div className="question-format">
       <p>{question.text}</p>
@@ -157,15 +158,16 @@ function Flashcard() {
   const [answers, setAnswers] = useState({});
   const [shortAnswers, setShortAnswers] = useState({});
   const [gradedResponse, setGradedResponse] = useState(null);
+  const { socketRef, initializeSocketConnection } = useContext(UserContext); // Access socketRef and initializeSocketConnection
 
   const fetchQuestions = useCallback(async () => {
     try {
       const problemRes = await api.get(`/problems/${id}`);
       setProblem(problemRes.data);
-      console.log(`Fetched problem title: ${problemRes.data.title}`);
-      console.log('Fetching questions for problem:', id);
+      // console.log(`Fetched problem title: ${problemRes.data.title}`);
+      // console.log('Fetching questions for problem:', id);
       const res = await api.get(`/problems/${id}/questions`);
-      console.log('Fetched questions:', res.data);
+      // console.log('Fetched questions:', res.data);
       setQuestions(res.data);
     } catch (err) {
       console.error('Failed to fetch questions:', err);
@@ -188,6 +190,17 @@ function Flashcard() {
   }, []);
 
   const handleSubmit = async () => {
+    // Establish WebSocket connection if not connected
+    if (!socketRef.current || !socketRef.current.connected) {
+      const token = localStorage.getItem('token');
+      initializeSocketConnection(token);
+
+      // Wait for the socket to connect before proceeding
+      await new Promise((resolve) => {
+        socketRef.current.on('connect', resolve);
+      });
+    }
+
     try {
       const responses = Object.entries(answers).map(([questionId, userResponse]) => ({
         questionId,
@@ -195,7 +208,7 @@ function Flashcard() {
       }));
       const res = await api.post(`/problems/${id}/submit`, { responses });
       setGradedResponse(res.data.feedback);
-      console.log('Submission result:', res.data);
+      // console.log('Submission result:', res.data);
     } catch (err) {
       console.error('Failed to submit answers:', err);
     }

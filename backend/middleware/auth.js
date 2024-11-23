@@ -1,4 +1,5 @@
 // middleware/auth.js
+const { verifyToken } = require('../utils/authUtils');
 
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
@@ -14,7 +15,7 @@ module.exports = function (req, res, next) {
 
   // Verify token
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = verifyToken(token);
     req.user = decoded; // Ensure req.user is set to decoded payload
     next();
   } catch (err) {
