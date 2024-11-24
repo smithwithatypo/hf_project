@@ -35,4 +35,15 @@ const UserSchema = new mongoose.Schema({
   ],
 });
 
+UserSchema.pre('deleteOne', { document: true, query: false }, async function (next) {
+  try {
+    const userId = this._id;
+    await UserProgress.deleteMany({ user: userId });
+    await UserResponse.deleteMany({ user: userId });
+    next();
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = mongoose.model('User', UserSchema);

@@ -199,13 +199,16 @@ router.post('/:problemId/submit', auth, async (req, res) => {
     user.badges = [...new Set([...user.badges, ...badges])];
 
     await user.save();
+
+    // Populate badges before sending response
+    const populatedUser = await User.findById(user._id).populate('badges').select('-password');
     
     const io = req.app.get('io');
     const connectedUsers = req.app.get('connectedUsers');
     const socketId = connectedUsers[req.user.userId];
 
     if (socketId) {
-      io.to(socketId).emit('userUpdated', user);
+      io.to(socketId).emit('userUpdated', populatedUser);
     
       // Disconnect the socket
       const socketToDisconnect = io.sockets.sockets.get(socketId);

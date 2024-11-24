@@ -5,8 +5,6 @@ const Topic = require('./models/Topic');
 const topicsData = require('./data/topics.json');
 require('dotenv').config();
 
-mongoose.connect(process.env.MONGODB_URI);
-
 const importTopics = async () => {
   try {
     await Topic.deleteMany();
@@ -22,11 +20,24 @@ const importTopics = async () => {
     }
 
     console.log('Topics imported successfully');
-    process.exit();
   } catch (error) {
     console.error('Error importing topics:', error);
-    process.exit(1);
+    throw error;  // Re-throw to be handled by the caller
   }
 };
 
-importTopics();
+if (require.main === module) {
+  // Script is being run directly
+  mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(async () => {
+      await importTopics();
+      process.exit(0);
+    })
+    .catch((error) => {
+      console.error('Error connecting to MongoDB:', error);
+      process.exit(1);
+    });
+} else {
+  // Script is being imported
+  module.exports = importTopics;
+}

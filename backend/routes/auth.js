@@ -35,15 +35,12 @@ router.post('/login', async (req, res) => {
 
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
+    // Populate badges
+    const populatedUser = await User.findById(user._id).populate('badges').select('-password');
+
     res.json({
       token,
-      user: {
-        id: user._id,
-        user_id: user.user_id,
-        name: user.name,
-        username: user.username,
-        email: user.email,
-      },
+      user: populatedUser,
     });
   } catch (error) {
     res.status(500).json({ message: 'Server error' });

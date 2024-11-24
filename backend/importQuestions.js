@@ -5,8 +5,6 @@ const Question = require('./models/Question');
 const problemsData = require('./data/problems.json');
 require('dotenv').config();
 
-mongoose.connect(process.env.MONGODB_URI);
-
 const importQuestions = async () => {
   try {
     await Question.deleteMany();
@@ -31,11 +29,22 @@ const importQuestions = async () => {
 
     await Question.insertMany(questions);
     console.log('Questions imported successfully');
-    process.exit();
   } catch (error) {
     console.error('Error importing questions:', error);
-    process.exit(1);
+    throw error;  // Re-throw to be handled by the caller
   }
 };
 
-importQuestions();
+if (require.main === module) {
+  mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(async () => {
+      await importQuestions();
+      process.exit(0);
+    })
+    .catch((error) => {
+      console.error('Error connecting to MongoDB:', error);
+      process.exit(1);
+    });
+} else {
+  module.exports = importQuestions;
+}

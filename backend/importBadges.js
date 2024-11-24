@@ -4,8 +4,6 @@ const Badge = require('./models/Badge');
 const badgesData = require('./data/badges.json');
 require('dotenv').config();
 
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-
 const importBadges = async () => {
   try {
     await Badge.deleteMany();
@@ -19,11 +17,22 @@ const importBadges = async () => {
 
     await Badge.insertMany(badges);
     console.log('Badges imported successfully');
-    process.exit();
   } catch (error) {
     console.error('Error importing badges:', error);
-    process.exit(1);
+    throw error;  // Re-throw to be handled by the caller
   }
 };
 
-importBadges();
+if (require.main === module) {
+  mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(async () => {
+      await importBadges();
+      process.exit(0);
+    })
+    .catch((error) => {
+      console.error('Error connecting to MongoDB:', error);
+      process.exit(1);
+    });
+} else {
+  module.exports = importBadges;
+}

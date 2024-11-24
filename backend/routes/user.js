@@ -8,7 +8,10 @@ const auth = require('../middleware/auth');
 router.get('/', auth, async (req, res) => {
     console.log('req.user:', req.user); // TODO: Remove this added line
   try {
-    const user = await User.findById(req.user.userId).select('-password');
+    const user = await User.findById(req.user.userId)
+    .select('-password')
+    .populate('badges');  // Populate badges
+
     if (!user) {
         console.log('User not found');
         return res.status(404).json({ message: 'User not found' });
@@ -18,6 +21,18 @@ router.get('/', auth, async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
+
+// Get user's badges
+router.get('/badges', auth, async (req, res) => {
+    try {
+      const user = await User.findById(req.user.userId).populate('badges');
+      if (!user) return res.status(404).json({ message: 'User not found' });
+  
+      res.json(user.badges);
+    } catch (error) {
+      res.status(500).json({ message: 'Server error' });
+    }
+  });
 
 // Remove the Update User Progress endpoint if it's obsolete
 router.put('/progress', auth, async (req, res) => {

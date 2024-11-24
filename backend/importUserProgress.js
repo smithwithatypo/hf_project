@@ -7,8 +7,6 @@ const Problem = require('./models/Problem');
 const Topic = require('./models/Topic');
 require('dotenv').config();
 
-mongoose.connect(process.env.MONGODB_URI);
-
 const importUserProgress = async () => {
   try {
     await UserProgress.deleteMany();
@@ -51,11 +49,22 @@ const importUserProgress = async () => {
     }
 
     console.log('User progress imported successfully');
-    process.exit();
   } catch (error) {
     console.error('Error importing user progress:', error);
-    process.exit(1);
+    throw error;  // Re-throw to be handled by the caller
   }
 };
 
-importUserProgress();
+if (require.main === module) {
+  mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(async () => {
+      await importUserProgress();
+      process.exit(0);
+    })
+    .catch((error) => {
+      console.error('Error connecting to MongoDB:', error);
+      process.exit(1);
+    });
+} else {
+  module.exports = importUserProgress;
+}

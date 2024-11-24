@@ -4,6 +4,22 @@ import { Navbar } from "../index";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../UserContext";
 
+// Import badge images
+import firstLoginBadge from '../../assets/badges/first_login.svg';
+import sevenDayStreakBadge from '../../assets/badges/7_day_streak.svg';
+import tenDayStreakBadge from '../../assets/badges/10_day_streak.svg';
+import quizChampionBadge from '../../assets/badges/quiz_champion.svg';
+import problemMasteryBadge from '../../assets/badges/problem_mastery.svg';
+
+// Map badgeIds to images
+const badgeImages = {
+  'first_login': firstLoginBadge,
+  '7_day_streak': sevenDayStreakBadge,
+  '10_day_streak': tenDayStreakBadge,
+  'quiz_champion': quizChampionBadge,
+  'problem_mastery': problemMasteryBadge,
+};
+
 function Profile() {
   const navigate = useNavigate();
   const { user, setUser, handleLogout } = React.useContext(UserContext);
@@ -64,10 +80,14 @@ function Profile() {
         </div>
         <h2>Your Badges</h2>
         <div className="badges-grid">
-          {badges.map((badge, index) => (
+          {user.badges.map((badge, index) => (
             <div key={index} className="badge">
-              {/* Replace with badge images if available */}
-              <p>{badge}</p>
+              {badgeImages[badge.badgeId] ? (
+                <img src={badgeImages[badge.badgeId]} alt={badge.name} className='badge-image' />
+              ) : (
+                <div className="badge-placeholder">No Image</div>
+              )}
+              <p>{badge.name}</p>
             </div>
           ))}
         </div>

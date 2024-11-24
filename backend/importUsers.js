@@ -6,8 +6,6 @@ const bcrypt = require('bcrypt');
 const usersData = require('./data/users.json');
 require('dotenv').config();
 
-mongoose.connect(process.env.MONGODB_URI);
-
 const importUsers = async () => {
   try {
     await User.deleteMany();
@@ -76,11 +74,22 @@ const importUsers = async () => {
 
     await User.insertMany(users);
     console.log('Users imported successfully');
-    process.exit();
   } catch (error) {
     console.error('Error importing users:', error);
-    process.exit(1);
+    throw error;  // Re-throw to be handled by the caller
   }
 };
 
-importUsers();
+if (require.main === module) {
+  mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(async () => {
+      await importUsers();
+      process.exit(0);
+    })
+    .catch((error) => {
+      console.error('Error connecting to MongoDB:', error);
+      process.exit(1);
+    });
+} else {
+  module.exports = importUsers;
+}
