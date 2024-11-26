@@ -7,6 +7,8 @@ const Problem = require('../models/Problem');
 const Question = require('../models/Question');
 const UserProgress = require('../models/UserProgress');
 const UserResponse = require('../models/UserResponse');
+const UserTopicProgress = require('../models/UserTopicProgress');
+const Badge = require('../models/Badge');
 
 
 // Helper function to grade answers
@@ -144,6 +146,27 @@ router.post('/:problemId/submit', auth, async (req, res) => {
     }
 
     // Update UserProgress
+    // After saving UserResponses and grading
+    const questionIds = problem.questions;
+    const totalQuestions = questionIds.length;
+    let correctOnLastAttempt = 0;
+
+    for (const questionId of questionIds) {
+      // Fetch the latest response for each question
+      const latestResponse = await UserResponse.findOne({
+        user: req.user.userId,
+        question: questionId,
+      }).sort({ attemptNumber: -1 });
+
+      if (latestResponse && latestResponse.correct) {
+        correctOnLastAttempt += 1;
+      }
+    }
+
+    // Calculate masteryLevel as the percentage of questions answered correctly on the last attempt
+    const masteryLevel = totalQuestions > 0 ? correctOnLastAttempt / totalQuestions : 0;
+
+    // Update or create UserProgress
     let userProgress = await UserProgress.findOne({
       user: req.user.userId,
       problem: problem._id,
@@ -156,18 +179,77 @@ router.post('/:problemId/submit', auth, async (req, res) => {
         topic: problem.topic,
         totalAttempts: responses.length,
         correctAttempts: totalCorrect,
-        masteryLevel: totalCorrect / responses.length,
+        masteryLevel: masteryLevel,
         lastPracticed: new Date(),
+        score: Math.max(0, totalPointsEarned), // Initialize score
       });
     } else {
       userProgress.totalAttempts += responses.length;
       userProgress.correctAttempts += totalCorrect;
+      userProgress.masteryLevel = masteryLevel;
       userProgress.lastPracticed = new Date();
     }
 
-    userProgress.masteryLevel = userProgress.correctAttempts / userProgress.totalAttempts;
-
     await userProgress.save();
+
+    // Update UserTopicProgress
+    // Fetch all UserProgress for the user in this topic
+    const userProgresses = await UserProgress.find({
+      user: req.user.userId,
+      topic: problem.topic,
+    }).populate('problem');
+
+    // Calculate weighted masteryLevel
+    let totalWeightedMastery = 0;
+    let totalQuestionsInTopic = 0;
+    let totalScore = 0; // Total score for the topic
+    let completedQuizzes = 0;
+
+    for (const up of userProgresses) {
+      const problemQuestions = up.problem.questions.length;
+      totalWeightedMastery += up.masteryLevel * problemQuestions;
+      totalQuestionsInTopic += problemQuestions;
+      totalScore += up.score;
+
+      // Check if the user has responded to all questions for this problem
+      const distinctQuestionsAnswered = await UserResponse.distinct('question', {
+        user: req.user.userId,
+        problem: up.problem._id,
+      });
+
+      if (distinctQuestionsAnswered.length >= problemQuestions) {
+        completedQuizzes += 1;
+      }
+    }
+
+    const topicMasteryLevel = totalQuestionsInTopic > 0 ? totalWeightedMastery / totalQuestionsInTopic : 0;
+
+    // Update or create UserTopicProgress
+    let userTopicProgress = await UserTopicProgress.findOne({
+      user: req.user.userId,
+      topic: problem.topic,
+    });
+
+    if (!userTopicProgress) {
+      userTopicProgress = new UserTopicProgress({
+        user: req.user.userId,
+        topic: problem.topic,
+        status: topicMasteryLevel === 1 ? 'completed' : 'in progress',
+        score: topicMasteryLevel * 100,
+        completedQuizzes: completedQuizzes,
+        masteryLevel: topicMasteryLevel,
+        lastPracticed: new Date(),
+        score: Math.max(0, totalScore), // Set initial score
+      });
+    } else {
+      userTopicProgress.masteryLevel = topicMasteryLevel;
+      userTopicProgress.score = Math.max(0, totalScore);
+      userTopicProgress.status = topicMasteryLevel === 1 ? 'completed' : 'in progress';
+      userTopicProgress.lastPracticed = new Date();
+      userTopicProgress.completedQuizzes = completedQuizzes;
+    }
+
+    await userTopicProgress.save();
 
     // Update User Points and Level
     const user = await User.findById(req.user.userId);
@@ -192,8 +274,24 @@ router.post('/:problemId/submit', auth, async (req, res) => {
 
     // Update badges (example logic, adjust as needed)
     const badges = [];
-    if (userProgress.masteryLevel === 1 && !user.badges.includes('problem_mastery')) {
-      badges.push('problem_mastery');
+    if (userProgress.masteryLevel === 1) {
+      // Find the Badge document for 'Problem Mastery'
+      const badge = await Badge.findOne({ name: 'Problem Mastery' });
+
+      if (badge) {
+        const badgeId = badge._id;
+
+        // Check if the user already has this badge
+        const hasBadge = user.badges.some(
+          (existingBadgeId) => existingBadgeId.toString() === badgeId.toString()
+        );
+
+        if (!hasBadge) {
+          user.badges.push(badgeId);
+        }
+      } else {
+        console.warn('Badge "Problem Mastery" not found in the database.');
+      }
     }
 
     user.badges = [...new Set([...user.badges, ...badges])];

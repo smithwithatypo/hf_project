@@ -33,6 +33,14 @@ const importUserResponses = async () => {
             continue;
           }
 
+          // Determine the attempt number
+          const lastResponse = await UserResponse.findOne({
+            user: user._id,
+            question: question._id,
+          }).sort({ attemptNumber: -1 });
+
+          const attemptNumber = lastResponse ? lastResponse.attemptNumber + 1 : 1;
+
           // Proceed with creating the UserResponse
           const userResponse = new UserResponse({
             user: user._id,
@@ -40,7 +48,7 @@ const importUserResponses = async () => {
             problem: problem._id,
             response: answerData.response,
             correct: answerData.correct,
-            attemptNumber: answerData.attempts || 1,
+            attemptNumber: attemptNumber,
             attemptedAt: new Date(answerData.last_attempted),
           });
           await userResponse.save();

@@ -7,87 +7,13 @@
       "username": "alice_smith",
       "password_hash": "$2a$10$y7zU5aBy6zhWm2bg2/LBlO490UGZu0Orm7oDaNnXQTsPjPuLfsQrS",
       "email": "alice@example.com",
-      "login_streak": 3,
-      "last_login_date": "2023-10-03",
-      "points": 500,
-      "level": 5,
-      "next_level_points": 600,
+      "login_streak": 0,
+      "last_login_date": "",
+      "points": 0,
+      "level": 0,
+      "next_level_points": 0,
       "badges": [],
       "progress": {
-        "topics": {
-          "arrays_and_hashing": {
-            "topicId": 101,
-            "name": "Arrays and Hashing",
-            "status": "in progress",
-            "score": 75,
-            "completedQuizzes": 1,
-            "mastery_level": 0.75,
-            "last_practiced": "2023-10-03"
-          }
-        },
-        "problems": {
-          "two_sum": {
-            "problemId": "two_sum",
-            "title": "Two Sum",
-            "topicId": 101,
-            "mastery_level": 0.75,
-            "last_practiced": "2023-10-03",
-            "questions_answered": {
-              "two_sum_q1": {
-                "questionId": "two_sum_q1",
-                "response": 1,
-                "correct": true,
-                "attempts": 1,
-                "last_attempted": "2023-10-03"
-              },
-              "two_sum_q2": {
-                "questionId": "two_sum_q2",
-                "response": "indices",
-                "correct": true,
-                "attempts": 1,
-                "last_attempted": "2023-10-03"
-              },
-              "two_sum_q3": {
-                "questionId": "two_sum_q3",
-                "response": false,
-                "correct": true,
-                "attempts": 1,
-                "last_attempted": "2023-10-03"
-              },
-              "two_sum_q4": {
-                "questionId": "two_sum_q4",
-                "response": 3,
-                "correct": true,
-                "attempts": 1,
-                "last_attempted": "2023-10-03"
-              },
-              "two_sum_q5": {
-                "questionId": "two_sum_q5",
-                "response": 3,
-                "correct": true,
-                "attempts": 1,
-                "last_attempted": "2023-10-03"
-              },
-              "two_sum_q6": {
-                "questionId": "two_sum_q6",
-                "response": {
-                  "Brute-force approach": 1,
-                  "Using a hash map": 1
-                },
-                "correct": true,
-                "attempts": 1,
-                "last_attempted": "2023-10-03"
-              },
-              "two_sum_q7": {
-                "questionId": "two_sum_q7",
-                "response": "hash map",
-                "correct": true,
-                "attempts": 1,
-                "last_attempted": "2023-10-03"
-              }
-            }
-          }
-        }
       }
     },
     {
@@ -106,11 +32,10 @@
       "progress": {
         "topics": {
           "arrays_and_hashing": {
-            "topicId": 101,
+            "topicId": "arrays_and_hashing",
             "name": "Arrays and Hashing",
             "status": "in progress",
             "score": 65,
-            "completedQuizzes": 1,
             "mastery_level": 0.65,
             "last_practiced": "2023-10-05"
           }
@@ -119,7 +44,7 @@
           "two_sum": {
             "problemId": "two_sum",
             "title": "Two Sum",
-            "topicId": 101,
+            "topicId": "arrays_and_hashing",
             "mastery_level": 0.65,
             "last_practiced": "2023-10-05",
             "questions_answered": {
@@ -127,35 +52,30 @@
                 "questionId": "two_sum_q1",
                 "response": 3,
                 "correct": false,
-                "attempts": 2,
                 "last_attempted": "2023-10-05"
               },
               "two_sum_q2": {
                 "questionId": "two_sum_q2",
                 "response": "indexes",
                 "correct": false,
-                "attempts": 1,
                 "last_attempted": "2023-10-05"
               },
               "two_sum_q3": {
                 "questionId": "two_sum_q3",
                 "response": true,
                 "correct": false,
-                "attempts": 1,
                 "last_attempted": "2023-10-05"
               },
               "two_sum_q4": {
                 "questionId": "two_sum_q4",
-                "response": 3,
+                "response": 1,
                 "correct": true,
-                "attempts": 1,
                 "last_attempted": "2023-10-05"
               },
               "two_sum_q5": {
                 "questionId": "two_sum_q5",
                 "response": 1,
                 "correct": false,
-                "attempts": 2,
                 "last_attempted": "2023-10-05"
               },
               "two_sum_q6": {
@@ -165,14 +85,12 @@
                   "Using a hash map": 1
                 },
                 "correct": true,
-                "attempts": 1,
                 "last_attempted": "2023-10-05"
               },
               "two_sum_q7": {
                 "questionId": "two_sum_q7",
                 "response": "hash map",
                 "correct": true,
-                "attempts": 1,
                 "last_attempted": "2023-10-05"
               }
             }
@@ -216,11 +134,10 @@
       "progress": {
         "topics": {
           "arrays_and_hashing": {
-            "topicId": 101,
+            "topicId": "arrays_and_hashing",
             "name": "Arrays and Hashing",
             "status": "in progress",
             "score": 80,
-            "completedQuizzes": 1,
             "mastery_level": 0.8,
             "last_practiced": "2023-10-07"
           }
@@ -229,7 +146,7 @@
           "two_sum": {
             "problemId": "two_sum",
             "title": "Two Sum",
-            "topicId": 101,
+            "topicId": "arrays_and_hashing",
             "mastery_level": 0.8,
             "last_practiced": "2023-10-07",
             "questions_answered": {
@@ -237,35 +154,30 @@
                 "questionId": "two_sum_q1",
                 "response": 1,
                 "correct": true,
-                "attempts": 1,
                 "last_attempted": "2023-10-07"
               },
               "two_sum_q2": {
                 "questionId": "two_sum_q2",
                 "response": "indexes",
                 "correct": false,
-                "attempts": 2,
                 "last_attempted": "2023-10-07"
               },
               "two_sum_q3": {
                 "questionId": "two_sum_q3",
                 "response": false,
                 "correct": true,
-                "attempts": 1,
                 "last_attempted": "2023-10-07"
               },
               "two_sum_q4": {
                 "questionId": "two_sum_q4",
                 "response": 2,
                 "correct": false,
-                "attempts": 2,
                 "last_attempted": "2023-10-07"
               },
               "two_sum_q5": {
                 "questionId": "two_sum_q5",
                 "response": 3,
                 "correct": true,
-                "attempts": 1,
                 "last_attempted": "2023-10-07"
               },
               "two_sum_q6": {
@@ -275,14 +187,12 @@
                   "Using a hash map": 1
                 },
                 "correct": true,
-                "attempts": 1,
                 "last_attempted": "2023-10-07"
               },
               "two_sum_q7": {
                 "questionId": "two_sum_q7",
                 "response": "hash table",
                 "correct": false,
-                "attempts": 1,
                 "last_attempted": "2023-10-07"
               }
             }
@@ -306,11 +216,10 @@
       "progress": {
         "topics": {
           "arrays_and_hashing": {
-            "topicId": 101,
+            "topicId": "arrays_and_hashing",
             "name": "Arrays and Hashing",
             "status": "in progress",
             "score": 50,
-            "completedQuizzes": 1,
             "mastery_level": 0.5,
             "last_practiced": "2023-10-02"
           }
@@ -319,7 +228,7 @@
           "two_sum": {
             "problemId": "two_sum",
             "title": "Two Sum",
-            "topicId": 101,
+            "topicId": "arrays_and_hashing",
             "mastery_level": 0.5,
             "last_practiced": "2023-10-02",
             "questions_answered": {
@@ -327,35 +236,30 @@
                 "questionId": "two_sum_q1",
                 "response": 4,
                 "correct": false,
-                "attempts": 1,
                 "last_attempted": "2023-10-02"
               },
               "two_sum_q2": {
                 "questionId": "two_sum_q2",
                 "response": "positions",
                 "correct": false,
-                "attempts": 2,
                 "last_attempted": "2023-10-02"
               },
               "two_sum_q3": {
                 "questionId": "two_sum_q3",
                 "response": true,
                 "correct": false,
-                "attempts": 1,
                 "last_attempted": "2023-10-02"
               },
               "two_sum_q4": {
                 "questionId": "two_sum_q4",
                 "response": 3,
                 "correct": true,
-                "attempts": 1,
                 "last_attempted": "2023-10-02"
               },
               "two_sum_q5": {
                 "questionId": "two_sum_q5",
                 "response": 2,
                 "correct": false,
-                "attempts": 1,
                 "last_attempted": "2023-10-02"
               },
               "two_sum_q6": {
@@ -365,14 +269,12 @@
                   "Using a hash map": 2
                 },
                 "correct": false,
-                "attempts": 2,
                 "last_attempted": "2023-10-02"
               },
               "two_sum_q7": {
                 "questionId": "two_sum_q7",
                 "response": "dictionary",
                 "correct": true,
-                "attempts": 1,
                 "last_attempted": "2023-10-02"
               }
             }
@@ -398,11 +300,10 @@
       "progress": {
         "topics": {
           "arrays_and_hashing": {
-            "topicId": 101,
+            "topicId": "arrays_and_hashing",
             "name": "Arrays and Hashing",
             "status": "in progress",
             "score": 80,
-            "completedQuizzes": 1,
             "mastery_level": 0.8,
             "last_practiced": "2023-10-10"
           }
@@ -411,7 +312,7 @@
           "two_sum": {
             "problemId": "two_sum",
             "title": "Two Sum",
-            "topicId": 101,
+            "topicId": "arrays_and_hashing",
             "mastery_level": 0.8,
             "last_practiced": "2023-10-10",
             "questions_answered": {
@@ -419,35 +320,30 @@
                 "questionId": "two_sum_q1",
                 "response": 1,
                 "correct": true,
-                "attempts": 1,
                 "last_attempted": "2023-10-10"
               },
               "two_sum_q2": {
                 "questionId": "two_sum_q2",
                 "response": "indices",
                 "correct": true,
-                "attempts": 2,
                 "last_attempted": "2023-10-10"
               },
               "two_sum_q3": {
                 "questionId": "two_sum_q3",
                 "response": false,
                 "correct": true,
-                "attempts": 1,
                 "last_attempted": "2023-10-10"
               },
               "two_sum_q4": {
                 "questionId": "two_sum_q4",
                 "response": 3,
                 "correct": true,
-                "attempts": 1,
                 "last_attempted": "2023-10-10"
               },
               "two_sum_q5": {
                 "questionId": "two_sum_q5",
                 "response": 3,
                 "correct": true,
-                "attempts": 2,
                 "last_attempted": "2023-10-10"
               },
               "two_sum_q6": {
@@ -457,14 +353,12 @@
                   "Using a hash map": 1
                 },
                 "correct": false,
-                "attempts": 1,
                 "last_attempted": "2023-10-10"
               },
               "two_sum_q7": {
                 "questionId": "two_sum_q7",
                 "response": "hash map",
                 "correct": true,
-                "attempts": 2,
                 "last_attempted": "2023-10-10"
               }
             }
@@ -506,11 +400,10 @@
       "progress": {
         "topics": {
           "arrays_and_hashing": {
-            "topicId": 101,
+            "topicId": "arrays_and_hashing",
             "name": "Arrays and Hashing",
             "status": "in progress",
             "score": 70,
-            "completedQuizzes": 1,
             "mastery_level": 0.7,
             "last_practiced": "2023-10-04"
           }
@@ -519,7 +412,7 @@
           "two_sum": {
             "problemId": "two_sum",
             "title": "Two Sum",
-            "topicId": 101,
+            "topicId": "arrays_and_hashing",
             "mastery_level": 0.7,
             "last_practiced": "2023-10-04",
             "questions_answered": {
@@ -527,35 +420,30 @@
                 "questionId": "two_sum_q1",
                 "response": 1,
                 "correct": true,
-                "attempts": 2,
                 "last_attempted": "2023-10-04"
               },
               "two_sum_q2": {
                 "questionId": "two_sum_q2",
                 "response": "indices",
                 "correct": true,
-                "attempts": 1,
                 "last_attempted": "2023-10-04"
               },
               "two_sum_q3": {
                 "questionId": "two_sum_q3",
                 "response": true,
                 "correct": false,
-                "attempts": 1,
                 "last_attempted": "2023-10-04"
               },
               "two_sum_q4": {
                 "questionId": "two_sum_q4",
                 "response": 3,
                 "correct": true,
-                "attempts": 1,
                 "last_attempted": "2023-10-04"
               },
               "two_sum_q5": {
                 "questionId": "two_sum_q5",
                 "response": 4,
                 "correct": false,
-                "attempts": 1,
                 "last_attempted": "2023-10-04"
               },
               "two_sum_q6": {
@@ -565,14 +453,12 @@
                   "Using a hash map": 3
                 },
                 "correct": false,
-                "attempts": 1,
                 "last_attempted": "2023-10-04"
               },
               "two_sum_q7": {
                 "questionId": "two_sum_q7",
                 "response": "hash map",
                 "correct": true,
-                "attempts": 1,
                 "last_attempted": "2023-10-04"
               }
             }
@@ -596,11 +482,10 @@
       "progress": {
         "topics": {
           "arrays_and_hashing": {
-            "topicId": 101,
+            "topicId": "arrays_and_hashing",
             "name": "Arrays and Hashing",
             "status": "in progress",
             "score": 70,
-            "completedQuizzes": 1,
             "mastery_level": 0.7,
             "last_practiced": "2023-10-06"
           }
@@ -609,7 +494,7 @@
           "two_sum": {
             "problemId": "two_sum",
             "title": "Two Sum",
-            "topicId": 101,
+            "topicId": "arrays_and_hashing",
             "mastery_level": 0.7,
             "last_practiced": "2023-10-06",
             "questions_answered": {
@@ -617,35 +502,30 @@
                 "questionId": "two_sum_q1",
                 "response": 3,
                 "correct": false,
-                "attempts": 2,
                 "last_attempted": "2023-10-06"
               },
               "two_sum_q2": {
                 "questionId": "two_sum_q2",
                 "response": "indices",
                 "correct": true,
-                "attempts": 2,
                 "last_attempted": "2023-10-06"
               },
               "two_sum_q3": {
                 "questionId": "two_sum_q3",
                 "response": false,
                 "correct": true,
-                "attempts": 1,
                 "last_attempted": "2023-10-06"
               },
               "two_sum_q4": {
                 "questionId": "two_sum_q4",
                 "response": 2,
                 "correct": false,
-                "attempts": 1,
                 "last_attempted": "2023-10-06"
               },
               "two_sum_q5": {
                 "questionId": "two_sum_q5",
                 "response": 3,
                 "correct": true,
-                "attempts": 1,
                 "last_attempted": "2023-10-06"
               },
               "two_sum_q6": {
@@ -655,14 +535,12 @@
                   "Using a hash map": 1
                 },
                 "correct": true,
-                "attempts": 2,
                 "last_attempted": "2023-10-06"
               },
               "two_sum_q7": {
                 "questionId": "two_sum_q7",
                 "response": "hash table",
                 "correct": false,
-                "attempts": 1,
                 "last_attempted": "2023-10-06"
               }
             }
@@ -688,11 +566,10 @@
       "progress": {
         "topics": {
           "arrays_and_hashing": {
-            "topicId": 101,
+            "topicId": "arrays_and_hashing",
             "name": "Arrays and Hashing",
             "status": "in progress",
             "score": 80,
-            "completedQuizzes": 1,
             "mastery_level": 0.8,
             "last_practiced": "2023-10-08"
           }
@@ -701,7 +578,7 @@
           "two_sum": {
             "problemId": "two_sum",
             "title": "Two Sum",
-            "topicId": 101,
+            "topicId": "arrays_and_hashing",
             "mastery_level": 0.8,
             "last_practiced": "2023-10-08",
             "questions_answered": {
@@ -709,35 +586,30 @@
                 "questionId": "two_sum_q1",
                 "response": 2,
                 "correct": false,
-                "attempts": 2,
                 "last_attempted": "2023-10-08"
               },
               "two_sum_q2": {
                 "questionId": "two_sum_q2",
                 "response": "indices",
                 "correct": true,
-                "attempts": 1,
                 "last_attempted": "2023-10-08"
               },
               "two_sum_q3": {
                 "questionId": "two_sum_q3",
                 "response": false,
                 "correct": true,
-                "attempts": 1,
                 "last_attempted": "2023-10-08"
               },
               "two_sum_q4": {
                 "questionId": "two_sum_q4",
                 "response": 3,
                 "correct": true,
-                "attempts": 2,
                 "last_attempted": "2023-10-08"
               },
               "two_sum_q5": {
                 "questionId": "two_sum_q5",
                 "response": 1,
                 "correct": false,
-                "attempts": 1,
                 "last_attempted": "2023-10-08"
               },
               "two_sum_q6": {
@@ -747,14 +619,12 @@
                   "Using a hash map": 3
                 },
                 "correct": false,
-                "attempts": 1,
                 "last_attempted": "2023-10-08"
               },
               "two_sum_q7": {
                 "questionId": "two_sum_q7",
                 "response": "hash map",
                 "correct": true,
-                "attempts": 1,
                 "last_attempted": "2023-10-08"
               }
             }

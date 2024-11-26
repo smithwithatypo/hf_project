@@ -93,10 +93,10 @@ function Profile() {
         </div>
 
         {/* Debugging info remove before deployment */}
-        <div className="user-debug">
+        {/* <div className="user-debug">
           <h3>User Context (Debug)</h3>
           <pre>{JSON.stringify(user, null, 2)}</pre>
-        </div>
+        </div> */}
       </div>
     </>
   );

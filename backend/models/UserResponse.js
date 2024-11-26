@@ -26,4 +26,6 @@ const UserResponseSchema = new mongoose.Schema({
   },
 });
 
+UserResponseSchema.index({ user: 1, question: 1, attemptNumber: -1});
+
 module.exports = mongoose.model('UserResponse', UserResponseSchema);

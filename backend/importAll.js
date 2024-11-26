@@ -10,6 +10,7 @@ const importBadges = require('./importBadges');
 const importUsers = require('./importUsers');
 const importUserProgress = require('./importUserProgress');
 const importUserResponses = require('./importUserResponses');
+const importUserTopicProgress = require('./importUserTopicProgress');
 
 const runImports = async () => {
   try {
@@ -21,8 +22,9 @@ const runImports = async () => {
     await importQuestions();
     await importProblems();
     await importUsers();
-    await importUserProgress();
     await importUserResponses();
+    await importUserProgress();
+    await importUserTopicProgress();
 
     console.log('All data imported successfully');
     process.exit();

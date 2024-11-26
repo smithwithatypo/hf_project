@@ -21,6 +21,8 @@ const importUsers = async () => {
         level: 1,
         next_level_points: 100,
         badges: [],
+        login_streak: 0,
+        last_login_date: new Date(),
     };
 
     // Map badgeIds to ObjectIds
@@ -55,6 +57,8 @@ const importUsers = async () => {
           level: user.level || 1,
           next_level_points: user.next_level_points || 100,
           badges: badgeObjectIds, // Use ObjectIds for badges
+          login_streak: user.login_streak || 0,
+          last_login_date: user.last_login_date ? (user.last_login_date === '' ? new Date() : user.last_login_date ) : null,
         };
       })
     );

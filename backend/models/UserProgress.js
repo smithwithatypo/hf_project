@@ -16,16 +16,17 @@ const UserProgressSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Topic',
   },
-  totalAttempts: {
+  totalAttempts: {  // All attempts to questions in this problem
     type: Number,
     default: 0,
   },
-  correctAttempts: {
+  correctAttempts: {  // All attempts with correct answers to questions in this problem
     type: Number,
     default: 0,
   },
   masteryLevel: Number, // Calculated based on performance
   lastPracticed: Date,
+  score: {type: Number, default: 0},
 });
 
 module.exports = mongoose.model('UserProgress', UserProgressSchema);

@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect, useRef } from 'react';
 import io from 'socket.io-client';
 import api from './api';  
+import log from './components/Logger/logger';
 
 export const UserContext = createContext();
 
@@ -22,11 +23,11 @@ export function UserProvider({ children }) {
     });
 
     socketRef.current.on('connect_error', (err) => {
-      console.error('Socket connection error:', err);
+      log.debug('Socket connection error:', err);
     });
 
     socketRef.current.on('disconnect', (reason) => {
-      console.log('Socket disconnected:', reason);
+      log.debug('Socket disconnected:', reason);
       // if (reason === 'io server disconnect') {
       //   // Server disconnected the socket; the client needs to reconnect manually
       //   socketRef.current.connect();
@@ -36,7 +37,7 @@ export function UserProvider({ children }) {
 
   // Load user from localStorage on mount
   useEffect(() => {
-    console.log('UserProvider useEffect triggered');
+    log.debug('UserProvider useEffect triggered');
     const fetchUser = async () => {
       const token = localStorage.getItem('token');
 
@@ -68,7 +69,7 @@ export function UserProvider({ children }) {
   // Establish socket connection when user logs in
   useEffect(() => {
     if (user && !socketRef.current) {
-      console.log('Establishing WebSocket connection...');
+      log.debug('Establishing WebSocket connection...');
       const token = localStorage.getItem('token');
       if (token) {
         initializeSocketConnection(token);

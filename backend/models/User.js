@@ -13,7 +13,7 @@ const UserSchema = new mongoose.Schema({
   },
   last_login_date: {
     type: Date,
-    default: Date.now,
+    default: null,
   },
   points: {
     type: Number,

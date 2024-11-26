@@ -4,6 +4,7 @@ const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const Badge = require('../models/Badge');
 
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
@@ -16,20 +17,42 @@ router.post('/login', async (req, res) => {
     if (!isMatch) return res.status(400).json({ message: 'Invalid credentials' });
 
     // Update login_streak and last_login_date
-    const today = new Date().toISOString().split('T')[0];
-    const lastLoginDate = user.last_login_date.toISOString().split('T')[0];
+    const today = new Date();
+    const lastLoginDate = user.last_login_date ? new Date(user.last_login_date) : null;
 
-    if (today === lastLoginDate) {
-      // User has already logged in today, no need to update login_streak
-    } else if (new Date(today) - new Date(lastLoginDate) === 86400000) {
-      // User logged in yesterday, increment login_streak
-      user.login_streak += 1;
-    } else {
-      // User did not log in yesterday, reset login_streak
+    let isFirstLogin = false;
+
+    if (!lastLoginDate) {
+      // First login ever
       user.login_streak = 1;
+      isFirstLogin = true;
+    } else {
+      // Strip time components
+      const todayDateOnly = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+      const lastLoginDateOnly = new Date(lastLoginDate.getFullYear(), lastLoginDate.getMonth(), lastLoginDate.getDate());
+
+      const differenceInDays = (todayDateOnly - lastLoginDateOnly) / (24 * 60 * 60 * 1000);
+
+      if (differenceInDays === 0) {
+        // User has already logged in today
+      } else if (differenceInDays === 1) {
+        // User logged in yesterday, increment login_streak
+        user.login_streak += 1;
+      } else {
+        // User did not log in yesterday, reset login_streak
+        user.login_streak = 1;
+      }
     }
 
-    user.last_login_date = new Date();
+    user.last_login_date = today;
+
+    // Award the first_login badge if it's the user's first login
+    if (isFirstLogin) {
+      const firstLoginBadge = await Badge.findOne({ badgeId: 'first_login' });
+      if (firstLoginBadge) {
+        user.badges.push(firstLoginBadge._id);
+      }
+    }
 
     await user.save();
 

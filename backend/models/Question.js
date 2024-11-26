@@ -9,7 +9,7 @@ const QuestionSchema = new mongoose.Schema({
   correctAnswer: mongoose.Schema.Types.Mixed,
   order: Number,
   explanation: String,
-  pointValue: { type: Number, default: 1 },
+  pointValue: { type: Number, default: 5 },
 });
 
 QuestionSchema.pre('deleteOne', { document: true, query: false }, async function (next) {

@@ -2,23 +2,41 @@
 
 const express = require('express');
 const router = express.Router();
-const Topic = require('../models/Topic'); // Assuming you have a Topic model
 const auth = require('../middleware/auth');
-const Question = require('../models/Question');
+const Topic = require('../models/Topic'); // Assuming you have a Topic model
+const UserTopicProgress = require('../models/UserTopicProgress');
+const UserProgress = require('../models/UserProgress');
 const Problem = require('../models/Problem');
 
-// GET /api/topics - Get all topics
-router.get('/', async (req, res) => {
+// GET /api/topics - Get all topics with user's mastery levels
+router.get('/', auth, async (req, res) => {
   try {
     const topics = await Topic.find();
-    res.json(topics);
+    const userId = req.user.userId;
+
+    // Include user's mastery level for each topic
+    const topicsWithProgress = await Promise.all(
+      topics.map(async (topic) => {
+        const userTopicProgress = await UserTopicProgress.findOne({
+          user: userId,
+          topic: topic._id,
+        });
+        const masteryLevel = userTopicProgress ? userTopicProgress.masteryLevel : 0;
+        return {
+          ...topic.toObject(),
+          masteryLevel,
+        };
+      })
+    );
+
+    res.json(topicsWithProgress);
   } catch (error) {
     console.error('Error fetching topics:', error);
     res.status(500).json({ message: 'Server error' });
   }
 });
 
-// Get all problems for a topic
+// Get all problems for a topic with user's mastery levels
 router.get('/:topicId/problems', auth, async (req, res) => {
   try {
     const topic = await Topic.findOne({ topicId: req.params.topicId });
@@ -27,7 +45,24 @@ router.get('/:topicId/problems', auth, async (req, res) => {
     }
 
     const problems = await Problem.find({ topic: topic._id }).select('-questions');
-    res.json(problems);
+    const userId = req.user.userId;
+
+    // Include user's mastery level for each problem
+    const problemsWithProgress = await Promise.all(
+      problems.map(async (problem) => {
+        const userProgress = await UserProgress.findOne({
+          user: userId,
+          problem: problem._id,
+        });
+        const masteryLevel = userProgress ? userProgress.masteryLevel : 0;
+        return {
+          ...problem.toObject(),
+          masteryLevel,
+        };
+      })
+    );
+
+    res.json(problemsWithProgress);
   } catch (error) {
     console.error('Error fetching problems:', error);
     res.status(500).json({ message: 'Server error' });

@@ -21,7 +21,7 @@ const importQuestions = async () => {
             correctAnswer: questionData.correct_answer,
             order: questionData.order,
             explanation: questionData.explanation,
-            pointValue: questionData.pointValue || 1,
+            pointValue: questionData.pointValue || 5,
           });
         }
       }

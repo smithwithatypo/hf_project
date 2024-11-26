@@ -48,7 +48,8 @@
               ],
               "correct_answer": 0,
               "order": 1,
-              "explanation": "The main goal is to find indices of the two numbers such that they add up to a specific target."
+              "explanation": "The main goal is to find indices of the two numbers such that they add up to a specific target.",
+              "pointValue": 5
             },
             {
               "questionId": "two_sum_q2",
@@ -57,7 +58,8 @@
               "options": [],
               "correct_answer": "indices",
               "order": 2,
-              "explanation": "The function should return the indices of the two numbers."
+              "explanation": "The function should return the indices of the two numbers.",
+              "pointValue": 5
             },
             {
               "questionId": "two_sum_q3",
@@ -66,7 +68,8 @@
               "options": [],
               "correct_answer": false,
               "order": 3,
-              "explanation": "Each input has exactly one solution, and you may not use the same element twice."
+              "explanation": "Each input has exactly one solution, and you may not use the same element twice.",
+              "pointValue": 10
             },
             {
               "questionId": "two_sum_q4",
@@ -80,7 +83,8 @@
               ],
               "correct_answer": 2,
               "order": 4,
-              "explanation": "The brute-force approach checks all pairs, resulting in O(n^2) time complexity."
+              "explanation": "The brute-force approach checks all pairs, resulting in O(n^2) time complexity.",
+              "pointValue": 10
             },
             {
               "questionId": "two_sum_q5",
@@ -94,7 +98,8 @@
               ],
               "correct_answer": 2,
               "order": 5,
-              "explanation": "Using a hash map allows us to achieve O(n) time complexity."
+              "explanation": "Using a hash map allows us to achieve O(n) time complexity.",
+              "pointValue": 10
             },
             {
               "questionId": "two_sum_q6",
@@ -108,7 +113,8 @@
               ],
               "correct_answer": [0, 2],
               "order": 6,
-              "explanation": "Brute-force and hash map approaches are valid. Sorting and two pointers work if the array is sorted and elements are unique."
+              "explanation": "Brute-force and hash map approaches are valid. Sorting and two pointers work if the array is sorted and elements are unique.",
+              "pointValue": 10
             },
             {
               "questionId": "two_sum_q7",
@@ -117,7 +123,8 @@
               "options": [],
               "correct_answer": "hash map",
               "order": 7,
-              "explanation": "A hash map allows for constant time lookups, enabling O(n) overall time complexity."
+              "explanation": "A hash map allows for constant time lookups, enabling O(n) overall time complexity.",
+              "pointValue": 20
             }
           ]
         }

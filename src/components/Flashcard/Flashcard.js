@@ -5,6 +5,7 @@ import problemsData from "../../data/problems.json"; // Adjust the path as neces
 import api from "../../api";
 import "./Flashcard.css";
 import { UserContext } from "../../UserContext";
+import log from "../Logger/logger";
 
 
 // Child components wrapped with React.memo
@@ -47,7 +48,7 @@ const ShortAnswerQuestion = memo(({ question, answers, handleAnswerChange, grade
 const MultipleChoiceQuestion = memo(({ question, answers, handleAnswerChange, gradedResponse }) => {
 
   const feedback = gradedResponse?.find(f => f.questionId === question._id.toString());
-  // console.log('Feedback:', feedback);
+  // log.debug('Feedback:', feedback);
   return (
     <div className="question-format">
       <p>{question.text}</p>
@@ -123,7 +124,7 @@ const MultipleSelectQuestion = memo(({ question, answers, handleAnswerChange, gr
   };
 
   const feedback = gradedResponse?.find(f => f.questionId === question._id.toString());
-  // console.log(`Multiple select feedback:`, feedback);
+  // log.debug(`Multiple select feedback:`, feedback);
   return (
     <div className="question-format">
       <p>{question.text}</p>
@@ -164,10 +165,10 @@ function Flashcard() {
     try {
       const problemRes = await api.get(`/problems/${id}`);
       setProblem(problemRes.data);
-      // console.log(`Fetched problem title: ${problemRes.data.title}`);
-      // console.log('Fetching questions for problem:', id);
+      // log.debug(`Fetched problem title: ${problemRes.data.title}`);
+      // log.debug('Fetching questions for problem:', id);
       const res = await api.get(`/problems/${id}/questions`);
-      // console.log('Fetched questions:', res.data);
+      // log.debug('Fetched questions:', res.data);
       setQuestions(res.data);
     } catch (err) {
       console.error('Failed to fetch questions:', err);
@@ -208,7 +209,7 @@ function Flashcard() {
       }));
       const res = await api.post(`/problems/${id}/submit`, { responses });
       setGradedResponse(res.data.feedback);
-      // console.log('Submission result:', res.data);
+      // log.debug('Submission result:', res.data);
     } catch (err) {
       console.error('Failed to submit answers:', err);
     }
@@ -276,7 +277,7 @@ function Flashcard() {
         </div>
 
        {/* Debugging info remove before deployment */}
-        <div className='user-responses'>
+        {/* <div className='user-responses'>
           <h3>User Responses (Debug)</h3>
           <pre>{JSON.stringify(answers, null, 2)}</pre>
         </div>
@@ -292,7 +293,7 @@ function Flashcard() {
               </div>
             ))}
           </div>
-        )}
+        )} */}
 
       </div>
     </>
