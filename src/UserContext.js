@@ -10,7 +10,7 @@ export function UserProvider({ children }) {
   const socketRef = useRef();
 
   function initializeSocketConnection(token) {
-    socketRef.current = io('http://localhost:5001', {
+    socketRef.current = io(`${process.env.REACT_APP_API_BASE_URL}`, {
       auth: {
         token,
       },

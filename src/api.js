@@ -4,7 +4,7 @@ import log from './components/Logger/logger';
 log.debug('API_BASE_URL:', process.env.REACT_APP_API_BASE_URL);
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL || 'http://localhost:5001/api',
+  baseURL: `${process.env.REACT_APP_API_BASE_URL}/api`,
 });
 
 api.interceptors.request.use((config) => {
