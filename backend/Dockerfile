@@ -13,18 +13,8 @@ RUN npm install
 # Copy the rest of the application code to the working directory
 COPY . .
 
-# Set build-time environment variables
-ARG REACT_APP_API_BASE_URL
-ENV REACT_APP_API_BASE_URL=$REACT_APP_API_BASE_URL
-
-# Build the React app
-RUN npm run build
-
-# Install serve to serve the build directory
-RUN npm install -g serve
-
 # Expose the port the app will run on
-EXPOSE 3000
+EXPOSE 5001
 
-# Start the React app
-CMD ["serve", "-s", "build"]
+# Start the backend server
+CMD ["node", "index.js"]

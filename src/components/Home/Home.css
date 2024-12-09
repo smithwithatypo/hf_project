@@ -1,0 +1,129 @@
+.home-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .topic-selection {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .topics-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .topic-button {
+    background-color: #4B4B4D; /* Thunder color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+    text-align: center;
+  }
+  
+  .topic-button.active {
+    background-color: #A8C686; /* Grassy color */
+  }
+  
+  .topic-button:hover {
+    opacity: 0.7;
+  }
+  
+  .problems-section {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .problems-table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 50%;
+    table-layout: fixed;
+  }
+  
+  .problems-table th {
+    background-color: #4B4B4D; /* Dark grey for header */
+    color: white;
+    text-align: left;
+    padding: 10px;
+}
+
+.problems-table th:hover {
+    background-color: #4B4B4D; /* Keep the same dark grey on hover */
+}
+
+.problems-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.problems-table tr:hover {
+    background-color: #A8C686;
+    cursor: pointer;
+}
+
+/* Progress bar styles */
+.progress-container {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #76c7c0;
+  border-radius: 5px;
+  width: 0%;
+}
+
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it’s above other content */
+}
+
+.modal {
+  background: #fff; /* Modal background color */
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.motivational-quote {
+  font-size: 16px;
+  font-style: italic;
+  color: #4B4B4D; /* Thunder color */
+  margin-bottom: 20px;
+}
+
+.close-button {
+  background-color: #4B4B4D; /* Thunder color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: #333; /* Darker shade */
+}

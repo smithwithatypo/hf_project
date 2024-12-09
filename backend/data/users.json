@@ -1,0 +1,636 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "user_id": "user_001",
+      "name": "Alice Smith",
+      "username": "alice_smith",
+      "password_hash": "$2a$10$y7zU5aBy6zhWm2bg2/LBlO490UGZu0Orm7oDaNnXQTsPjPuLfsQrS",
+      "email": "alice@example.com",
+      "login_streak": 0,
+      "last_login_date": "",
+      "points": 0,
+      "level": 0,
+      "next_level_points": 0,
+      "badges": [],
+      "progress": {
+      }
+    },
+    {
+      "id": 2,
+      "user_id": "user_002",
+      "name": "Bob Johnson",
+      "username": "bob_johnson",
+      "password_hash": "$2a$10$ZvogRkTthic/rVPIDZL7aecH/dUelL/kXXeB01DJx/jSHdy.pfeEa",
+      "email": "bob@example.com",
+      "login_streak": 5,
+      "last_login_date": "2023-10-05",
+      "points": 650,
+      "level": 6,
+      "next_level_points": 700,
+      "badges": [],
+      "progress": {
+        "topics": {
+          "arrays_and_hashing": {
+            "topicId": "arrays_and_hashing",
+            "name": "Arrays and Hashing",
+            "status": "in progress",
+            "score": 65,
+            "mastery_level": 0.65,
+            "last_practiced": "2023-10-05"
+          }
+        },
+        "problems": {
+          "two_sum": {
+            "problemId": "two_sum",
+            "title": "Two Sum",
+            "topicId": "arrays_and_hashing",
+            "mastery_level": 0.65,
+            "last_practiced": "2023-10-05",
+            "questions_answered": {
+              "two_sum_q1": {
+                "questionId": "two_sum_q1",
+                "response": 3,
+                "correct": false,
+                "last_attempted": "2023-10-05"
+              },
+              "two_sum_q2": {
+                "questionId": "two_sum_q2",
+                "response": "indexes",
+                "correct": false,
+                "last_attempted": "2023-10-05"
+              },
+              "two_sum_q3": {
+                "questionId": "two_sum_q3",
+                "response": true,
+                "correct": false,
+                "last_attempted": "2023-10-05"
+              },
+              "two_sum_q4": {
+                "questionId": "two_sum_q4",
+                "response": 1,
+                "correct": true,
+                "last_attempted": "2023-10-05"
+              },
+              "two_sum_q5": {
+                "questionId": "two_sum_q5",
+                "response": 1,
+                "correct": false,
+                "last_attempted": "2023-10-05"
+              },
+              "two_sum_q6": {
+                "questionId": "two_sum_q6",
+                "response": {
+                  "Brute-force approach": 1,
+                  "Using a hash map": 1
+                },
+                "correct": true,
+                "last_attempted": "2023-10-05"
+              },
+              "two_sum_q7": {
+                "questionId": "two_sum_q7",
+                "response": "hash map",
+                "correct": true,
+                "last_attempted": "2023-10-05"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 3,
+      "user_id": "user_003",
+      "name": "Charlie Davis",
+      "username": "charlie_davis",
+      "password_hash": "$2a$10$JiEZMYBLZ.C9zwC8/PVPveXZ2DFejgilyIWgWz1D/njpVwrozfDLG",
+      "email": "charlie@example.com",
+      "login_streak": 1,
+      "last_login_date": "2023-10-01",
+      "points": 300,
+      "level": 3,
+      "next_level_points": 400,
+      "badges": [],
+      "progress": {
+        "topics": {},
+        "problems": {}
+      }
+    },
+    {
+      "id": 4,
+      "user_id": "user_004",
+      "name": "Dana Lee",
+      "username": "dana_lee",
+      "password_hash": "$2a$10$HC8SkOCQtuJCWW21WDO6nus3kieNHzYRaaUO0Ib3CZtXehLIiHTW6",
+      "email": "dana@example.com",
+      "login_streak": 7,
+      "last_login_date": "2023-10-07",
+      "points": 800,
+      "level": 8,
+      "next_level_points": 900,
+      "badges": [
+        "7_day_streak"
+      ],
+      "progress": {
+        "topics": {
+          "arrays_and_hashing": {
+            "topicId": "arrays_and_hashing",
+            "name": "Arrays and Hashing",
+            "status": "in progress",
+            "score": 80,
+            "mastery_level": 0.8,
+            "last_practiced": "2023-10-07"
+          }
+        },
+        "problems": {
+          "two_sum": {
+            "problemId": "two_sum",
+            "title": "Two Sum",
+            "topicId": "arrays_and_hashing",
+            "mastery_level": 0.8,
+            "last_practiced": "2023-10-07",
+            "questions_answered": {
+              "two_sum_q1": {
+                "questionId": "two_sum_q1",
+                "response": 1,
+                "correct": true,
+                "last_attempted": "2023-10-07"
+              },
+              "two_sum_q2": {
+                "questionId": "two_sum_q2",
+                "response": "indexes",
+                "correct": false,
+                "last_attempted": "2023-10-07"
+              },
+              "two_sum_q3": {
+                "questionId": "two_sum_q3",
+                "response": false,
+                "correct": true,
+                "last_attempted": "2023-10-07"
+              },
+              "two_sum_q4": {
+                "questionId": "two_sum_q4",
+                "response": 2,
+                "correct": false,
+                "last_attempted": "2023-10-07"
+              },
+              "two_sum_q5": {
+                "questionId": "two_sum_q5",
+                "response": 3,
+                "correct": true,
+                "last_attempted": "2023-10-07"
+              },
+              "two_sum_q6": {
+                "questionId": "two_sum_q6",
+                "response": {
+                  "Brute-force approach": 1,
+                  "Using a hash map": 1
+                },
+                "correct": true,
+                "last_attempted": "2023-10-07"
+              },
+              "two_sum_q7": {
+                "questionId": "two_sum_q7",
+                "response": "hash table",
+                "correct": false,
+                "last_attempted": "2023-10-07"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 5,
+      "user_id": "user_005",
+      "name": "Ethan White",
+      "username": "ethan_white",
+      "password_hash": "$2a$10$U4JxAUohhdEBwCoyUj5jueatAiQZdoMVkybT3ZF2Eb1TNbWYbunre",
+      "email": "ethan@example.com",
+      "login_streak": 2,
+      "last_login_date": "2023-10-02",
+      "points": 400,
+      "level": 4,
+      "next_level_points": 500,
+      "badges": [],
+      "progress": {
+        "topics": {
+          "arrays_and_hashing": {
+            "topicId": "arrays_and_hashing",
+            "name": "Arrays and Hashing",
+            "status": "in progress",
+            "score": 50,
+            "mastery_level": 0.5,
+            "last_practiced": "2023-10-02"
+          }
+        },
+        "problems": {
+          "two_sum": {
+            "problemId": "two_sum",
+            "title": "Two Sum",
+            "topicId": "arrays_and_hashing",
+            "mastery_level": 0.5,
+            "last_practiced": "2023-10-02",
+            "questions_answered": {
+              "two_sum_q1": {
+                "questionId": "two_sum_q1",
+                "response": 4,
+                "correct": false,
+                "last_attempted": "2023-10-02"
+              },
+              "two_sum_q2": {
+                "questionId": "two_sum_q2",
+                "response": "positions",
+                "correct": false,
+                "last_attempted": "2023-10-02"
+              },
+              "two_sum_q3": {
+                "questionId": "two_sum_q3",
+                "response": true,
+                "correct": false,
+                "last_attempted": "2023-10-02"
+              },
+              "two_sum_q4": {
+                "questionId": "two_sum_q4",
+                "response": 3,
+                "correct": true,
+                "last_attempted": "2023-10-02"
+              },
+              "two_sum_q5": {
+                "questionId": "two_sum_q5",
+                "response": 2,
+                "correct": false,
+                "last_attempted": "2023-10-02"
+              },
+              "two_sum_q6": {
+                "questionId": "two_sum_q6",
+                "response": {
+                  "Brute-force approach": 2,
+                  "Using a hash map": 2
+                },
+                "correct": false,
+                "last_attempted": "2023-10-02"
+              },
+              "two_sum_q7": {
+                "questionId": "two_sum_q7",
+                "response": "dictionary",
+                "correct": true,
+                "last_attempted": "2023-10-02"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 6,
+      "user_id": "user_006",
+      "name": "Fiona Green",
+      "username": "fiona_green",
+      "password_hash": "$2a$10$Ug79xXoLQMmNkmnwa0mgjuE9aBK.wu4WXte1mP9mCC7U1/3VMwWay",
+      "email": "fiona@example.com",
+      "login_streak": 10,
+      "last_login_date": "2023-10-10",
+      "points": 1100,
+      "level": 11,
+      "next_level_points": 1200,
+      "badges": [
+        "10_day_streak"
+      ],
+      "progress": {
+        "topics": {
+          "arrays_and_hashing": {
+            "topicId": "arrays_and_hashing",
+            "name": "Arrays and Hashing",
+            "status": "in progress",
+            "score": 80,
+            "mastery_level": 0.8,
+            "last_practiced": "2023-10-10"
+          }
+        },
+        "problems": {
+          "two_sum": {
+            "problemId": "two_sum",
+            "title": "Two Sum",
+            "topicId": "arrays_and_hashing",
+            "mastery_level": 0.8,
+            "last_practiced": "2023-10-10",
+            "questions_answered": {
+              "two_sum_q1": {
+                "questionId": "two_sum_q1",
+                "response": 1,
+                "correct": true,
+                "last_attempted": "2023-10-10"
+              },
+              "two_sum_q2": {
+                "questionId": "two_sum_q2",
+                "response": "indices",
+                "correct": true,
+                "last_attempted": "2023-10-10"
+              },
+              "two_sum_q3": {
+                "questionId": "two_sum_q3",
+                "response": false,
+                "correct": true,
+                "last_attempted": "2023-10-10"
+              },
+              "two_sum_q4": {
+                "questionId": "two_sum_q4",
+                "response": 3,
+                "correct": true,
+                "last_attempted": "2023-10-10"
+              },
+              "two_sum_q5": {
+                "questionId": "two_sum_q5",
+                "response": 3,
+                "correct": true,
+                "last_attempted": "2023-10-10"
+              },
+              "two_sum_q6": {
+                "questionId": "two_sum_q6",
+                "response": {
+                  "Brute-force approach": 2,
+                  "Using a hash map": 1
+                },
+                "correct": false,
+                "last_attempted": "2023-10-10"
+              },
+              "two_sum_q7": {
+                "questionId": "two_sum_q7",
+                "response": "hash map",
+                "correct": true,
+                "last_attempted": "2023-10-10"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 7,
+      "user_id": "user_007",
+      "name": "George Harris",
+      "username": "george_harris",
+      "password_hash": "$2a$10$SM4NFn1sf8yKoDfUqCNU8OlAIS1YXSyXgs3F.S4U5wPuEkvV2tSHW",
+      "email": "george@example.com",
+      "login_streak": 0,
+      "last_login_date": "2023-09-25",
+      "points": 200,
+      "level": 2,
+      "next_level_points": 300,
+      "badges": [],
+      "progress": {
+        "topics": {},
+        "problems": {}
+      }
+    },
+    {
+      "id": 8,
+      "user_id": "user_008",
+      "name": "Hannah King",
+      "username": "hannah_king",
+      "password_hash": "$2a$10$rjoLPemZXnY8mV/Mtb1YE.u5JJeaTcuAeXBysmWdHEjVwXx4/qhlS",
+      "email": "hannah@example.com",
+      "login_streak": 4,
+      "last_login_date": "2023-10-04",
+      "points": 550,
+      "level": 5,
+      "next_level_points": 600,
+      "badges": [],
+      "progress": {
+        "topics": {
+          "arrays_and_hashing": {
+            "topicId": "arrays_and_hashing",
+            "name": "Arrays and Hashing",
+            "status": "in progress",
+            "score": 70,
+            "mastery_level": 0.7,
+            "last_practiced": "2023-10-04"
+          }
+        },
+        "problems": {
+          "two_sum": {
+            "problemId": "two_sum",
+            "title": "Two Sum",
+            "topicId": "arrays_and_hashing",
+            "mastery_level": 0.7,
+            "last_practiced": "2023-10-04",
+            "questions_answered": {
+              "two_sum_q1": {
+                "questionId": "two_sum_q1",
+                "response": 1,
+                "correct": true,
+                "last_attempted": "2023-10-04"
+              },
+              "two_sum_q2": {
+                "questionId": "two_sum_q2",
+                "response": "indices",
+                "correct": true,
+                "last_attempted": "2023-10-04"
+              },
+              "two_sum_q3": {
+                "questionId": "two_sum_q3",
+                "response": true,
+                "correct": false,
+                "last_attempted": "2023-10-04"
+              },
+              "two_sum_q4": {
+                "questionId": "two_sum_q4",
+                "response": 3,
+                "correct": true,
+                "last_attempted": "2023-10-04"
+              },
+              "two_sum_q5": {
+                "questionId": "two_sum_q5",
+                "response": 4,
+                "correct": false,
+                "last_attempted": "2023-10-04"
+              },
+              "two_sum_q6": {
+                "questionId": "two_sum_q6",
+                "response": {
+                  "Brute-force approach": 1,
+                  "Using a hash map": 3
+                },
+                "correct": false,
+                "last_attempted": "2023-10-04"
+              },
+              "two_sum_q7": {
+                "questionId": "two_sum_q7",
+                "response": "hash map",
+                "correct": true,
+                "last_attempted": "2023-10-04"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 9,
+      "user_id": "user_009",
+      "name": "Ian Martinez",
+      "username": "ian_martinez",
+      "password_hash": "$2a$10$H7LSfyrFuCkCCEvlVmXwZutUbZMCHSgdLUcFfDfule4Qs6ueH2KAe",
+      "email": "ian@example.com",
+      "login_streak": 6,
+      "last_login_date": "2023-10-06",
+      "points": 700,
+      "level": 7,
+      "next_level_points": 800,
+      "badges": [],
+      "progress": {
+        "topics": {
+          "arrays_and_hashing": {
+            "topicId": "arrays_and_hashing",
+            "name": "Arrays and Hashing",
+            "status": "in progress",
+            "score": 70,
+            "mastery_level": 0.7,
+            "last_practiced": "2023-10-06"
+          }
+        },
+        "problems": {
+          "two_sum": {
+            "problemId": "two_sum",
+            "title": "Two Sum",
+            "topicId": "arrays_and_hashing",
+            "mastery_level": 0.7,
+            "last_practiced": "2023-10-06",
+            "questions_answered": {
+              "two_sum_q1": {
+                "questionId": "two_sum_q1",
+                "response": 3,
+                "correct": false,
+                "last_attempted": "2023-10-06"
+              },
+              "two_sum_q2": {
+                "questionId": "two_sum_q2",
+                "response": "indices",
+                "correct": true,
+                "last_attempted": "2023-10-06"
+              },
+              "two_sum_q3": {
+                "questionId": "two_sum_q3",
+                "response": false,
+                "correct": true,
+                "last_attempted": "2023-10-06"
+              },
+              "two_sum_q4": {
+                "questionId": "two_sum_q4",
+                "response": 2,
+                "correct": false,
+                "last_attempted": "2023-10-06"
+              },
+              "two_sum_q5": {
+                "questionId": "two_sum_q5",
+                "response": 3,
+                "correct": true,
+                "last_attempted": "2023-10-06"
+              },
+              "two_sum_q6": {
+                "questionId": "two_sum_q6",
+                "response": {
+                  "Brute-force approach": 1,
+                  "Using a hash map": 1
+                },
+                "correct": true,
+                "last_attempted": "2023-10-06"
+              },
+              "two_sum_q7": {
+                "questionId": "two_sum_q7",
+                "response": "hash table",
+                "correct": false,
+                "last_attempted": "2023-10-06"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 10,
+      "user_id": "user_010",
+      "name": "Jenny Nguyen",
+      "username": "jenny_nguyen",
+      "password_hash": "$2a$10$dyLry/ONLNSQn7fKta/n2uNlZLPLGNhIB/qDej3K9ny0GzYOOkLoO",
+      "email": "jenny@example.com",
+      "login_streak": 8,
+      "last_login_date": "2023-10-08",
+      "points": 850,
+      "level": 8,
+      "next_level_points": 900,
+      "badges": [
+        "7_day_streak"
+      ],
+      "progress": {
+        "topics": {
+          "arrays_and_hashing": {
+            "topicId": "arrays_and_hashing",
+            "name": "Arrays and Hashing",
+            "status": "in progress",
+            "score": 80,
+            "mastery_level": 0.8,
+            "last_practiced": "2023-10-08"
+          }
+        },
+        "problems": {
+          "two_sum": {
+            "problemId": "two_sum",
+            "title": "Two Sum",
+            "topicId": "arrays_and_hashing",
+            "mastery_level": 0.8,
+            "last_practiced": "2023-10-08",
+            "questions_answered": {
+              "two_sum_q1": {
+                "questionId": "two_sum_q1",
+                "response": 2,
+                "correct": false,
+                "last_attempted": "2023-10-08"
+              },
+              "two_sum_q2": {
+                "questionId": "two_sum_q2",
+                "response": "indices",
+                "correct": true,
+                "last_attempted": "2023-10-08"
+              },
+              "two_sum_q3": {
+                "questionId": "two_sum_q3",
+                "response": false,
+                "correct": true,
+                "last_attempted": "2023-10-08"
+              },
+              "two_sum_q4": {
+                "questionId": "two_sum_q4",
+                "response": 3,
+                "correct": true,
+                "last_attempted": "2023-10-08"
+              },
+              "two_sum_q5": {
+                "questionId": "two_sum_q5",
+                "response": 1,
+                "correct": false,
+                "last_attempted": "2023-10-08"
+              },
+              "two_sum_q6": {
+                "questionId": "two_sum_q6",
+                "response": {
+                  "Brute-force approach": 1,
+                  "Using a hash map": 3
+                },
+                "correct": false,
+                "last_attempted": "2023-10-08"
+              },
+              "two_sum_q7": {
+                "questionId": "two_sum_q7",
+                "response": "hash map",
+                "correct": true,
+                "last_attempted": "2023-10-08"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

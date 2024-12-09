@@ -1,0 +1,17 @@
+[
+    {
+      "topicId": "arrays_and_hashing",
+      "name": "Arrays and Hashing",
+      "description": "Techniques involving arrays and hash maps."
+    },
+    {
+      "topicId": "two_pointers",
+      "name": "Two Pointers",
+      "description": "Techniques involving two pointers moving through data."
+    },
+    {
+        "topicId": "1d_dynamic_programming",
+        "name": "1-D Dynamic Programming",
+        "description": "Techniques for solving problems by breaking them down into simpler subproblems in one dimension."
+    }
+  ]

@@ -1,0 +1,134 @@
+{
+  "topics": {
+    "arrays_and_hashing": {
+      "topicId": "arrays_and_hashing",
+      "name": "Arrays and Hashing",
+      "description": "Techniques involving arrays and hash maps.",
+      "problems": {
+        "two_sum": {
+          "problemId": "two_sum",
+          "title": "Two Sum",
+          "description": "Given an array of integers and a target value, find two numbers such that they add up to the target.",
+          "examples": [
+            {
+              "input": "nums = [2,7,11,15], target = 9",
+              "output": "[0,1]",
+              "explanation": "Because nums[0] + nums[1] == 9, we return [0, 1]."
+            },
+            {
+              "input": "nums = [3,2,4], target = 6",
+              "output": "[1,2]",
+              "explanation": "Because nums[1] + nums[2] == 6, we return [1, 2]."
+            },
+            {
+              "input": "nums = [3,3], target = 6",
+              "output": "[0,1]",
+              "explanation": "Because nums[0] + nums[1] == 6, we return [0, 1]."
+            }
+          ],
+          "constraints": [
+            "2 <= nums.length <= 10^4",
+            "-10^9 <= nums[i] <= 10^9",
+            "-10^9 <= target <= 10^9",
+            "Only one valid answer exists."
+          ],
+          "starterCode": {
+            "python": "class Solution:\n    def twoSum(self, nums: List[int], target: int) -> List[int]:\n        # Write your code here\n        pass"
+          },
+          "questions": [
+            {
+              "questionId": "two_sum_q1",
+              "text": "What is the main goal of the Two Sum problem?",
+              "type": "multiple_choice",
+              "options": [
+                "Find two numbers that add up to the target",
+                "Sort the array",
+                "Find the maximum value",
+                "Calculate the sum of all elements"
+              ],
+              "correct_answer": 0,
+              "order": 1,
+              "explanation": "The main goal is to find indices of the two numbers such that they add up to a specific target.",
+              "pointValue": 5
+            },
+            {
+              "questionId": "two_sum_q2",
+              "text": "What should the function return?",
+              "type": "short_answer",
+              "options": [],
+              "correct_answer": "indices",
+              "order": 2,
+              "explanation": "The function should return the indices of the two numbers.",
+              "pointValue": 5
+            },
+            {
+              "questionId": "two_sum_q3",
+              "text": "Can the same element be used twice?",
+              "type": "true_false",
+              "options": [],
+              "correct_answer": false,
+              "order": 3,
+              "explanation": "Each input has exactly one solution, and you may not use the same element twice.",
+              "pointValue": 10
+            },
+            {
+              "questionId": "two_sum_q4",
+              "text": "What is the time complexity of the brute-force approach?",
+              "type": "multiple_choice",
+              "options": [
+                "O(n)",
+                "O(log n)",
+                "O(n^2)",
+                "O(n log n)"
+              ],
+              "correct_answer": 2,
+              "order": 4,
+              "explanation": "The brute-force approach checks all pairs, resulting in O(n^2) time complexity.",
+              "pointValue": 10
+            },
+            {
+              "questionId": "two_sum_q5",
+              "text": "Using a hash map can reduce the time complexity to?",
+              "type": "multiple_choice",
+              "options": [
+                "O(n^2)",
+                "O(log n)",
+                "O(n)",
+                "O(n log n)"
+              ],
+              "correct_answer": 2,
+              "order": 5,
+              "explanation": "Using a hash map allows us to achieve O(n) time complexity.",
+              "pointValue": 10
+            },
+            {
+              "questionId": "two_sum_q6",
+              "text": "Select all valid approaches to solve the Two Sum problem.",
+              "type": "multiple_select",
+              "options": [
+                "Brute-force approach",
+                "Sorting and two pointers",
+                "Using a hash map",
+                "Dynamic programming"
+              ],
+              "correct_answer": [0, 2],
+              "order": 6,
+              "explanation": "Brute-force and hash map approaches are valid. Sorting and two pointers work if the array is sorted and elements are unique.",
+              "pointValue": 10
+            },
+            {
+              "questionId": "two_sum_q7",
+              "text": "Which data structure is commonly used to achieve O(n) time complexity?",
+              "type": "short_answer",
+              "options": [],
+              "correct_answer": "hash map",
+              "order": 7,
+              "explanation": "A hash map allows for constant time lookups, enabling O(n) overall time complexity.",
+              "pointValue": 20
+            }
+          ]
+        }
+      }
+    }
+  }
+}
